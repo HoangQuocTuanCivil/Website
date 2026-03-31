@@ -24,14 +24,16 @@
         .hero-title { font-size: 3.2rem !important; margin-bottom: 1.2rem !important; }
         .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 1.8rem !important; }
 
-        /* ---- hero-visual = slideshow, fills height ---- */
+        /* ---- hero-visual = slideshow, fills full height ---- */
         .hero-visual {
-            height: 480px !important;
+            height: 100% !important;
+            min-height: calc(100vh - 140px) !important;
             border-radius: 14px;
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
             position: relative !important;
             display: block !important;
+            align-self: stretch;
         }
 
         /* ---- Orbit: absolute inside hero-content (left text side) ---- */
