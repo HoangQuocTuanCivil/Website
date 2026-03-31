@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where magick:*)",
+      "Bash(where convert:*)",
+      "Bash(where ffmpeg:*)",
+      "Bash(where python:*)",
+      "Bash(where python3:*)",
+      "Bash(python -c \"from PIL import Image; print\\(''Pillow OK''\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
