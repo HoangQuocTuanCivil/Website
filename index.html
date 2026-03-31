@@ -37,12 +37,13 @@
             transform-origin: center center;
         }
 
-        /* ---- Orbit: absolute inside hero-content (left text side) ---- */
+        /* ---- Orbit: right side next to slideshow ---- */
         .hero-content { position: relative; z-index: 1; }
+        .hero-container { position: relative !important; }
         .orbit-system {
             position: absolute !important;
             top: 50% !important;
-            right: calc(-100px + 20vh) !important;
+            right: 25px !important;
             left: unset !important;
             transform: translateY(-50%) !important;
             z-index: 20 !important;
@@ -104,14 +105,14 @@
                     <a href="services.html" class="btn btn-primary" data-i18n="hero.cta_primary">Khám phá</a>
                     <a href="tel:+84399762377" class="btn btn-secondary" data-i18n="hero.cta_secondary">Liên hệ ngay</a>
                 </div>
+            </div>
 
-                <!-- Orbit: positioned at right edge of text block, floats in front of text -->
-                <div class="orbit-system">
-                    <div class="core"></div>
-                    <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
-                    <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
-                    <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
-                </div>
+            <!-- Orbit: right side, next to slideshow -->
+            <div class="orbit-system">
+                <div class="core"></div>
+                <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
+                <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
+                <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
             </div>
 
             <!-- RIGHT: Slideshow fills hero-visual -->
