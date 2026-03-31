@@ -36,21 +36,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
+    function activateTab(tabId) {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        const btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+        const content = document.getElementById(tabId);
+        if (btn) btn.classList.add('active');
+        if (content) content.classList.add('active');
+    }
+
     if (tabBtns.length > 0) {
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-
-                // Add active class to clicked
-                btn.classList.add('active');
                 const targetId = btn.getAttribute('data-tab');
-                if (targetId) {
-                    const targetEl = document.getElementById(targetId);
-                    if (targetEl) targetEl.classList.add('active');
-                }
+                activateTab(targetId);
             });
         });
+
+        // Handle URL hash to activate correct tab on page load
+        const hash = window.location.hash.replace('#', '');
+        if (hash && document.getElementById(hash)) {
+            activateTab(hash);
+        }
     }
 });
