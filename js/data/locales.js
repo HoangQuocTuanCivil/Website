@@ -1,6 +1,9 @@
 const locales = {
     vi: {
-        "head.title": "Hoang Quoc Tuan | Portfolio",
+        "head.title.index": "Trang chủ - BIM Innovator | Hoàng Quốc Tuấn",
+        "head.title.about": "Về tôi - BIM Innovator | Hoàng Quốc Tuấn",
+        "head.title.services": "Dịch vụ - BIM Innovator | Hoàng Quốc Tuấn",
+        "head.title.projects": "Dự án - BIM Innovator | Hoàng Quốc Tuấn",
         "nav.subtitle": "BIM & Digital Twin",
         "nav.home": "Trang chủ",
         "nav.about": "Về tôi",
@@ -184,7 +187,10 @@ const locales = {
         "crs.cta_btn": "Liên hệ tư vấn"
     },
     en: {
-        "head.title": "Hoang Quoc Tuan | Portfolio",
+        "head.title.index": "Home - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.about": "About - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.services": "Services - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.projects": "Projects - BIM Innovator | Hoang Quoc Tuan",
         "nav.subtitle": "BIM & Digital Twin",
         "nav.home": "Home",
         "nav.about": "About",
@@ -414,7 +420,10 @@ const locales = {
         "crs.cta_btn": "Contact for Consultation"
     },
     zh: {
-        "head.title": "Hoang Quoc Tuan | Portfolio",
+        "head.title.index": "主页 - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.about": "关于 - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.services": "服务 - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.projects": "项目 - BIM Innovator | Hoang Quoc Tuan",
         "nav.subtitle": "BIM及数字孪生",
         "nav.home": "主页",
         "nav.about": "关于",
@@ -644,7 +653,10 @@ const locales = {
         "crs.cta_btn": "联系咨询"
     },
     ja: {
-        "head.title": "Hoang Quoc Tuan | Portfolio",
+        "head.title.index": "ホーム - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.about": "概要 - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.services": "サービス - BIM Innovator | Hoang Quoc Tuan",
+        "head.title.projects": "プロジェクト - BIM Innovator | Hoang Quoc Tuan",
         "nav.subtitle": "BIMとデジタルツイン",
         "nav.home": "ホーム",
         "nav.about": "概要",
