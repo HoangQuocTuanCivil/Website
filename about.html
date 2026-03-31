@@ -3,13 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="head.title">Portfolio | Đổi mới & Công nghệ</title>
+    <title data-i18n="head.title">Portfolio | Hoàng Quốc Tuấn</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <style>
+        /* ---- ABOUT PAGE SPECIFIC STYLES ---- */
+        .about-page {
+            padding-top: 100px;
+        }
+        /* Hero Banner */
+        .about-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(237,28,36,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(0,157,1,0.1) 0%, transparent 50%);
+        }
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .avatar-wrapper {
+            text-align: center;
+        }
+        .avatar-ring {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--primary-red);
+            padding: 6px;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-green));
+            box-shadow: 0 0 40px rgba(237,28,36,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 900;
+            color: white;
+        }
+        .avatar-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+        }
+        .avatar-title {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 0.5rem;
+        }
+        .about-hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .about-hero-content h1 span.red { color: var(--primary-red); }
+        .about-hero-content h1 span.green { color: var(--primary-green); }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(237,28,36,0.2);
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .about-hero-desc {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            max-width: 650px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-num {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            line-height: 1;
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+        }
+
+        /* Timeline */
+        .section-label {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-red), var(--primary-green));
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary-red);
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(237,28,36,0.5);
+        }
+        .timeline-item.green::before { background: var(--primary-green); box-shadow: 0 0 10px rgba(0,157,1,0.5); }
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-item.green .timeline-date { color: var(--primary-green); }
+        .timeline-role {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-company {
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .skill-category {
+            background: white;
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary-red);
+            transition: var(--transition);
+        }
+        .skill-category:nth-child(even) { border-top-color: var(--primary-green); }
+        .skill-category:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .skill-cat-title {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-tag {
+            background: var(--bg-color-alt);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 5rem 0;
+        }
+        .contact-section .section-heading { color: white; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .contact-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+        }
+        .contact-card.zalo:hover { border-color: #0068ff; }
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .contact-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        .contact-value {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .zalo-qr-wrapper {
+            text-align: center;
+        }
+        .zalo-qr-img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: white;
+            padding: 8px;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-stats { justify-content: center; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .about-hero-content h1 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
-<body>
+<body class="about-page">
     <!-- Navigation -->
     <nav class="navbar" style="box-shadow: var(--shadow-md);">
         <div class="container nav-container">
@@ -19,7 +311,6 @@
                     <span style="font-size: 0.75rem; color: var(--primary-red); font-family: var(--font-body); margin-top: 4px;" data-i18n="nav.subtitle">BIM & Digital Twin</span>
                 </div>
             </a>
-            
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link" data-i18n="nav.home">Trang chủ</a></li>
@@ -27,7 +318,6 @@
                     <li><a href="services.html" class="nav-link" data-i18n="nav.services">Dịch vụ</a></li>
                     <li><a href="projects.html" class="nav-link" data-i18n="nav.projects">Dự án</a></li>
                 </ul>
-                
                 <div class="custom-lang-selector" id="customLangSelector">
                     <div class="lang-current" id="langCurrent">
                         <img src="styles/icon/ViietnamLanguage.png" alt="VI" class="lang-flag" id="currentFlag">
@@ -41,52 +331,214 @@
                     </div>
                 </div>
             </div>
-            
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section class="about section-padding bg-alt" style="margin-top: 80px; min-height: calc(100vh - 80px);">
-        <div class="container about-container">
-            <div class="about-content">
-                <h2 class="section-title text-left"><span data-i18n="about.title">Về</span> <span class="highlight-red">Chúng tôi</span></h2>
-                <p class="about-text" data-i18n="about.desc1">Chúng tôi mang hệ gen của sự đổi mới và công nghệ. Trọng tâm của chúng tôi là áp dụng các biện pháp tối ưu nhất để đưa ý tưởng thành hiện thực với độ chính xác tuyệt đối.</p>
-                <p class="about-text" data-i18n="about.desc2">Với nhiều năm kinh nghiệm trong lĩnh vực kỹ thuật xây dựng và công nghệ thông tin, chúng tôi thấu hiểu cách để gia tăng giá trị cho từng vòng đời dự án.</p>
-                
-                <div class="metrics">
-                    <div class="metric-item">
-                        <h4 class="metric-number">150+</h4>
-                        <p class="metric-label" data-i18n="about.metric1">Dự án hoàn thành</p>
-                    </div>
-                    <div class="metric-item">
-                        <h4 class="metric-number">10+</h4>
-                        <p class="metric-label" data-i18n="about.metric2">Năm kinh nghiệm</p>
-                    </div>
-                </div>
+    <!-- ==================== HERO BANNER ==================== -->
+    <section class="about-hero">
+        <div class="container about-hero-grid">
+            <!-- Avatar -->
+            <div class="avatar-wrapper">
+                <div class="avatar-ring">HT</div>
+                <div class="avatar-name">HOÀNG QUỐC TUẤN</div>
+                <div class="avatar-title">MSc. | CTO | BIM Expert</div>
             </div>
-            <div class="about-visual">
-                <div class="dna-container">
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
-                    <div class="dna-strand"></div>
+
+            <!-- Intro -->
+            <div class="about-hero-content">
+                <div class="hero-badge">⚡ Chief Technology Officer</div>
+                <h1>Kiến tạo tương lai <br>với <span class="red">BIM</span> & <span class="green">Digital Twin</span></h1>
+                <p class="about-hero-desc">
+                    Hơn 10 năm kinh nghiệm trong lĩnh vực kỹ thuật xây dựng và công nghệ thông tin.
+                    Tôi là người tiên phong ứng dụng BIM, Digital Twin và tự động hóa quy trình vào
+                    các dự án hạ tầng giao thông quy mô lớn tại Việt Nam.
+                    Hiện đang giữ vị trí <strong style="color:var(--primary-green)">Phó Tổng Giám đốc phụ trách Công nghệ (CTO)</strong>
+                    tại Công ty Cổ phần Tư vấn Xây dựng A2Z.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">10+</div>
+                        <div class="hero-stat-label">Năm kinh nghiệm</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">150+</div>
+                        <div class="hero-stat-label">Dự án hoàn thành</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">500+</div>
+                        <div class="hero-stat-label">Học viên đào tạo</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- ==================== KINH NGHIỆM ==================== -->
+    <section class="section-padding">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
+
+            <!-- Timeline Kinh nghiệm -->
+            <div>
+                <p class="section-label">Career Path</p>
+                <h2 class="section-heading">Hành trình <span class="highlight-red">Sự nghiệp</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">01/2024 — Hiện tại</div>
+                        <div class="timeline-role">Phó Tổng Giám đốc (CTO)</div>
+                        <div class="timeline-company">🏢 Công ty CP Tư vấn Xây dựng A2Z</div>
+                        <div class="timeline-desc">Phụ trách chiến lược công nghệ, chuyển đổi số và triển khai BIM toàn diện. Lãnh đạo đội ngũ kỹ thuật số cho các dự án hạ tầng giao thông trọng điểm quốc gia.</div>
+                    </div>
+                    <div class="timeline-item green">
+                        <div class="timeline-date">Trước 2024</div>
+                        <div class="timeline-role">Giám đốc Chi nhánh TP.HCM</div>
+                        <div class="timeline-company">🏗️ Công ty Thiết kế Xây dựng Đại Phong</div>
+                        <div class="timeline-desc">Quản lý và điều hành chi nhánh, triển khai các dự án thiết kế xây dựng lớn tại phía Nam, ứng dụng BIM vào quy trình thiết kế.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Giai đoạn trước</div>
+                        <div class="timeline-role">Giảng viên Đại học</div>
+                        <div class="timeline-company">🎓 Đại học Đông Á - Đà Nẵng</div>
+                        <div class="timeline-desc">Giảng dạy các môn: Tin học nâng cao, Lập trình Java, Kỹ thuật phần mềm. Chuyển giao công nghệ và nghiên cứu ứng dụng CNTT trong xây dựng.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Học vấn -->
+            <div>
+                <p class="section-label">Education</p>
+                <h2 class="section-heading">Nền tảng <span class="highlight-green">Học vấn</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item green">
+                        <div class="timeline-date">Thạc sĩ (Master)</div>
+                        <div class="timeline-role">Chuyên ngành Kỹ thuật & Công nghệ</div>
+                        <div class="timeline-company">🎓 Đại học Bách khoa Đà Nẵng (DUT)</div>
+                        <div class="timeline-desc">Tốt nghiệp Thạc sĩ tại một trong những trường kỹ thuật hàng đầu miền Trung Việt Nam. Chuyên sâu về ứng dụng công nghệ trong ngành xây dựng.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Chứng chỉ Quốc tế</div>
+                        <div class="timeline-role">BIM Professional Certification</div>
+                        <div class="timeline-company">🏆 Autodesk & Đối tác Quốc tế</div>
+                        <div class="timeline-desc">Chứng nhận chuyên gia BIM từ các tổ chức quốc tế. Thành thạo Revit, Civil 3D, Navisworks, BIM 360, Dynamo Scripting.</div>
+                    </div>
+                    <div class="timeline-item green">
+                        <div class="timeline-date">Hợp tác Quốc tế</div>
+                        <div class="timeline-role">Biên bản ghi nhớ đầu tư & công nghệ</div>
+                        <div class="timeline-company">🌏 Nam Kinh, Trung Quốc (09/2025)</div>
+                        <div class="timeline-desc">Đại diện ký biên bản ghi nhớ về đầu tư, đào tạo và chuyển giao công nghệ BIM trong lĩnh vực hạ tầng giao thông quốc tế.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KỸ NĂNG ==================== -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <p class="section-label" style="text-align:center;">Chuyên môn</p>
+            <h2 class="section-heading" style="text-align:center;">Kỹ năng & <span class="highlight-red">Công cụ</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-cat-title">🏗️ BIM Software</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Autodesk Revit</span>
+                        <span class="skill-tag">Civil 3D</span>
+                        <span class="skill-tag">Navisworks</span>
+                        <span class="skill-tag">BIM 360</span>
+                        <span class="skill-tag">Dynamo</span>
+                        <span class="skill-tag">Infraworks</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">💻 Lập trình & Dev</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C# / .NET</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML/CSS/JS</span>
+                        <span class="skill-tag">Dynamo Script</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">🚀 Quản lý & Lãnh đạo</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Chiến lược CTO</span>
+                        <span class="skill-tag">Chuyển đổi số</span>
+                        <span class="skill-tag">Quản lý dự án</span>
+                        <span class="skill-tag">Đào tạo nội bộ</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">🌐 Hạ tầng Giao thông</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cao tốc & Cầu</span>
+                        <span class="skill-tag">Hầm xuyên núi</span>
+                        <span class="skill-tag">Đường đô thị</span>
+                        <span class="skill-tag">Quy hoạch</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">🔬 Công nghệ mới</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Digital Twin</span>
+                        <span class="skill-tag">Scan to BIM</span>
+                        <span class="skill-tag">VR/AR</span>
+                        <span class="skill-tag">AI tự động hóa</span>
+                        <span class="skill-tag">IoT Công trình</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">📚 Giảng dạy & Tư vấn</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">BIM Online</span>
+                        <span class="skill-tag">BIM Doanh nghiệp</span>
+                        <span class="skill-tag">Tư vấn CDE</span>
+                        <span class="skill-tag">ISO 19650</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LIÊN HỆ ==================== -->
+    <section class="contact-section">
+        <div class="container">
+            <p class="section-label" style="text-align:center; color: rgba(255,255,255,0.5);">Kết nối</p>
+            <h2 class="section-heading" style="text-align:center; color:white;">Liên hệ <span style="color:var(--primary-green)">Trực tiếp</span></h2>
+            <div class="contact-grid">
+                <!-- Phone -->
+                <a href="tel:+84399762377" class="contact-card">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-label">Điện thoại</div>
+                    <div class="contact-value">+84 399 762 377</div>
+                </a>
+
+                <!-- Gmail -->
+                <a href="mailto:hoangquoctuan1395@gmail.com" class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-label">Email / Gmail</div>
+                    <div class="contact-value">hoangquoctuan1395@gmail.com</div>
+                </a>
+
+                <!-- Zalo QR -->
+                <div class="contact-card zalo" style="cursor:default;">
+                    <div class="zalo-qr-wrapper">
+                        <span class="contact-icon">💬</span>
+                        <div class="contact-label">Zalo — Quét QR để kết nối</div>
+                        <img src="assets/ZaloQR.jpg" alt="Zalo QR Code - Hoàng Quốc Tuấn" class="zalo-qr-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col brand-col">
-                <a href="#" class="logo footer-logo">
+                <a href="index.html" class="logo footer-logo">
                     <span class="logo-red">BIM</span><span class="logo-green">Innovator</span>
                 </a>
                 <p class="footer-text" data-i18n="footer.desc">Kiến tạo tương lai với sức mạnh số và các giải pháp thông minh toàn diện trong lĩnh vực Kiến trúc & Xây dựng.</p>
@@ -94,29 +546,29 @@
             <div class="footer-col">
                 <h4 class="footer-heading" data-i18n="footer.links.title">Liên kết Nhanh</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html" data-i18n="nav.home">Trang chủ</a></li>
-                    <li><a href="about.html" data-i18n="nav.about">Về tôi</a></li>
-                    <li><a href="projects.html" data-i18n="nav.projects">Dự án</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="services.html">Dịch vụ</a></li>
+                    <li><a href="projects.html">Dự án</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4 class="footer-heading" data-i18n="footer.services.title">Dịch vụ</h4>
                 <ul class="footer-links">
-                    <li><a href="services.html" data-i18n="services.tab1">Đào tạo BIM Online</a></li>
-                    <li><a href="services.html" data-i18n="services.tab2">Đào tạo BIM Doanh nghiệp</a></li>
-                    <li><a href="services.html" data-i18n="services.tab3">Dịch vụ Mô hình BIM</a></li>
+                    <li><a href="services.html">Đào tạo BIM Online</a></li>
+                    <li><a href="services.html">Đào tạo BIM DN</a></li>
+                    <li><a href="services.html">Mô hình BIM</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 class="footer-heading" data-i18n="footer.contact.title">Liên hệ</h4>
-                <p class="footer-contact">Email: hello@example.com</p>
-                <p class="footer-contact">Điện thoại: +84 123 456 789</p>
-                <p class="footer-contact" data-i18n="footer.contact.address">Địa chỉ: TP. Hồ Chí Minh, Việt Nam</p>
+                <h4 class="footer-heading">Liên hệ</h4>
+                <p class="footer-contact"><a href="mailto:hoangquoctuan1395@gmail.com" style="color:#a0a0a0;">hoangquoctuan1395@gmail.com</a></p>
+                <p class="footer-contact"><a href="tel:+84399762377" style="color:#a0a0a0;">+84 399 762 377</a></p>
+                <p class="footer-contact">TP. Hồ Chí Minh, Việt Nam</p>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 BIM Innovator. All Rights Reserved.</p>
+                <p>&copy; 2026 Hoàng Quốc Tuấn — BIM Innovator. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
