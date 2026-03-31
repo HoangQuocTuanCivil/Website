@@ -78,9 +78,10 @@
 }
 
 .lang-flag {
-  width: 20px;
-  height: auto;
+  width: 18px;
+  height: 12px;
   border-radius: 2px;
+  object-fit: cover;
 }
 
 .lang-options {
