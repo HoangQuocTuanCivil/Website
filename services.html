@@ -938,10 +938,167 @@
 
 
             <div class="tab-content" id="tab-design">
-                <div class="service-card" style="border-bottom-color: var(--primary-green);">
-                    <div class="service-icon green-icon">📐</div>
-                    <h3 class="service-title" data-i18n="services.card4.title">Dịch vụ Thiết kế BIM</h3>
-                    <p class="service-desc" data-i18n="services.card4.desc">Khai thác dữ liệu mô hình để xuất bản vẽ thiết kế chất lượng cao, đồng bộ hóa tự động.</p>
+                <style>
+                    .design-hero-header {
+                        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+                        border-radius: 16px; padding: 2.5rem 3rem; margin-bottom: 2.5rem;
+                        display: flex; align-items: center; gap: 2rem;
+                        border-left: 5px solid var(--primary-green);
+                    }
+                    .design-hero-header .dsh-icon { font-size: 3.5rem; flex-shrink: 0; }
+                    .design-hero-header h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+                    .design-hero-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
+                    .design-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+                    .design-cap-item { background: white; border-radius: 12px; padding: 1.4rem 1.5rem; box-shadow: var(--shadow-sm); border-top: 3px solid var(--primary-green); transition: var(--transition); display: flex; align-items: flex-start; gap: 0.8rem; }
+                    .design-cap-item:nth-child(odd) { border-top-color: var(--primary-red); }
+                    .design-cap-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+                    .design-cap-item .dci-icon { font-size: 1.8rem; flex-shrink: 0; }
+                    .design-cap-item .dci-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+                    .design-cap-item .dci-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+                    .design-section-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 3px solid var(--primary-green); display: flex; align-items: center; gap: 0.6rem; }
+                    .design-section-title.red { border-bottom-color: var(--primary-red); }
+                    .design-work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 2.5rem; }
+                    .design-work-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+                    .design-work-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
+                    .design-work-img-wrap { position: relative; overflow: hidden; }
+                    .design-work-img-wrap img { width: 100%; display: block; height: 220px; object-fit: cover; transition: transform 0.5s ease; }
+                    .design-work-card:hover .design-work-img-wrap img { transform: scale(1.06); }
+                    .design-work-tag { position: absolute; top: 12px; left: 12px; background: var(--primary-green); color: white; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; }
+                    .design-work-tag.red { background: var(--primary-red); }
+                    .design-work-body { padding: 1.2rem 1.4rem; }
+                    .design-work-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-color); line-height: 1.3; }
+                    .design-work-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+                    .design-workflow { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+                    .design-wf-step { flex: 1; min-width: 130px; text-align: center; padding: 1.4rem 0.8rem; background: white; border-radius: 12px; box-shadow: var(--shadow-sm); }
+                    .design-wf-step .wf-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--primary-green); line-height: 1; margin-bottom: 0.4rem; }
+                    .design-wf-step:nth-child(even) .wf-num { color: var(--primary-red); }
+                    .design-wf-step .wf-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+                    .design-wf-step .wf-label { font-weight: 700; font-size: 0.82rem; }
+                    .design-wf-step .wf-sub { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; }
+                    @media (max-width: 900px) { .design-caps { grid-template-columns: repeat(2,1fr); } }
+                    @media (max-width: 768px) { .design-hero-header { flex-direction: column; text-align: center; } .design-caps { grid-template-columns: 1fr; } .design-work-grid { grid-template-columns: 1fr; } .design-wf-step { flex: 0 0 calc(50% - 0.4rem); } }
+                </style>
+
+                <!-- Hero header -->
+                <div class="design-hero-header">
+                    <div class="dsh-icon">📐</div>
+                    <div>
+                        <h3 data-i18n="dsg.title">Dịch vụ Thiết kế BIM</h3>
+                        <p data-i18n="dsg.subtitle">Khai thác toàn bộ dữ liệu từ mô hình BIM để xuất bản vẽ thiết kế chất lượng cao, đồng bộ hóa tự động và phối hợp đa chuyên ngành. Ứng dụng Revit, Civil 3D và Dynamo để tối ưu hóa 100% quy trình thiết kế hạ tầng giao thông.</p>
+                    </div>
+                </div>
+
+                <!-- Capabilities -->
+                <div class="design-section-title">💡 <span data-i18n="dsg.cap_title">Năng lực cung cấp</span></div>
+                <div class="design-caps">
+                    <div class="design-cap-item">
+                        <div class="dci-icon">🏗️</div>
+                        <div>
+                            <div class="dci-title" data-i18n="dsg.c1_title">Bản vẽ thi công từ BIM</div>
+                            <div class="dci-desc" data-i18n="dsg.c1_desc">Xuất bản vẽ 2D (plan, elevation, section, detail) trực tiếp từ mô hình Revit 3D, đảm bảo đồng bộ tự động khi mô hình thay đổi.</div>
+                        </div>
+                    </div>
+                    <div class="design-cap-item">
+                        <div class="dci-icon">⚡</div>
+                        <div>
+                            <div class="dci-title" data-i18n="dsg.c2_title">Tự động hóa Dynamo</div>
+                            <div class="dci-desc" data-i18n="dsg.c2_desc">Dùng Dynamo để tự động hóa bố trí cấu kiện, đặt tag, dim và tạo schedule — tiết kiệm 70% thời gian so với CAD.</div>
+                        </div>
+                    </div>
+                    <div class="design-cap-item">
+                        <div class="dci-icon">📊</div>
+                        <div>
+                            <div class="dci-title" data-i18n="dsg.c3_title">Bóc tách khối lượng</div>
+                            <div class="dci-desc" data-i18n="dsg.c3_desc">Xuất tự động bảng khối lượng thép, bê tông, coffa từ mô hình. Kết xuất sang Excel theo định dạng dự toán chuẩn.</div>
+                        </div>
+                    </div>
+                    <div class="design-cap-item">
+                        <div class="dci-icon">🔩</div>
+                        <div>
+                            <div class="dci-title" data-i18n="dsg.c4_title">Cốt thép chi tiết 3D</div>
+                            <div class="dci-desc" data-i18n="dsg.c4_desc">Bố trí cốt thép đầy đủ 3D cho tất cả cấu kiện: trụ, mố, bản mặt cầu, dầm — xuất bản vẽ cốt thép thi công tự động.</div>
+                        </div>
+                    </div>
+                    <div class="design-cap-item">
+                        <div class="dci-icon">🌐</div>
+                        <div>
+                            <div class="dci-title" data-i18n="dsg.c5_title">Phối hợp đa chuyên ngành</div>
+                            <div class="dci-desc" data-i18n="dsg.c5_desc">Phối hợp BIM giữa kết cấu, kiến trúc, MEP và địa kỹ thuật — phát hiện xung đột sớm thông qua Navisworks.</div>
+                        </div>
+                    </div>
+                    <div class="design-cap-item">
+                        <div class="dci-icon">📐</div>
+                        <div>
+                            <div class="dci-title" data-i18n="dsg.c6_title">Civil 3D & Corridor</div>
+                            <div class="dci-desc" data-i18n="dsg.c6_desc">Thiết kế tuyến đường, mặt cắt ngang, thoát nước và trắc dọc bằng Civil 3D — tích hợp với mô hình Revit cầu công trình.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample work -->
+                <div class="design-section-title red">🖼️ <span data-i18n="dsg.work_title">Công việc Thiết kế Tiêu biểu</span></div>
+                <div class="design-work-grid">
+                    <div class="design-work-card">
+                        <div class="design-work-img-wrap">
+                            <img src="assets/m_caubetong.png" alt="Bản vẽ thi công BIM cầu bê tông">
+                            <span class="design-work-tag red" data-i18n="dsg.tag_highway">Cao tốc</span>
+                        </div>
+                        <div class="design-work-body">
+                            <div class="design-work-title" data-i18n="dsg.w1_title">Bản vẽ thi công BIM — Cầu bê tông DUL Cao tốc</div>
+                            <div class="design-work-desc" data-i18n="dsg.w1_desc">Xuất đầy đủ bản vẽ plan, section, detail cầu bê tông dự ứng lực từ mô hình Revit. Tự động hóa DIM, TAG, khung tên và bảng khối lượng thép cho toàn bộ tuyến cao tốc.</div>
+                        </div>
+                    </div>
+                    <div class="design-work-card">
+                        <div class="design-work-img-wrap">
+                            <img src="assets/m_coththepcau.png" alt="Cốt thép chi tiết 3D cầu nút giao">
+                            <span class="design-work-tag">Cốt thép 3D</span>
+                        </div>
+                        <div class="design-work-body">
+                            <div class="design-work-title" data-i18n="dsg.w2_title">Bố trí Cốt thép Chi tiết 3D — Nút giao Hà Nội - Hải Phòng</div>
+                            <div class="design-work-desc" data-i18n="dsg.w2_desc">Bố trí đầy đủ cốt thép 3D cho trụ cầu, mố cầu và bản mặt cầu. Xuất bản vẽ thi công tự động và bảng khối lượng thép theo TCVN.</div>
+                        </div>
+                    </div>
+                    <div class="design-work-card">
+                        <div class="design-work-img-wrap">
+                            <img src="assets/bridge_rebar.png" alt="Bản vẽ cốt thép cầu chi tiết">
+                            <span class="design-work-tag">Chi tiết kết cấu</span>
+                        </div>
+                        <div class="design-work-body">
+                            <div class="design-work-title" data-i18n="dsg.w3_title">Bản vẽ Chi tiết Kết cấu — Cọc & Bệ móng cầu</div>
+                            <div class="design-work-desc" data-i18n="dsg.w3_desc">Thiết kế chi tiết hệ thống cọc khoan nhồi và bệ móng từ mô hình Revit. Tự động tạo bảng thống kê cốt thép và xuất bản vẽ theo định dạng chuẩn hồ sơ thiết kế.</div>
+                        </div>
+                    </div>
+                    <div class="design-work-card">
+                        <div class="design-work-img-wrap">
+                            <img src="assets/m_caunutgiao1.png" alt="Phối hợp đa chuyên ngành cầu nút giao">
+                            <span class="design-work-tag">Phối hợp BIM</span>
+                        </div>
+                        <div class="design-work-body">
+                            <div class="design-work-title" data-i18n="dsg.w4_title">Phối hợp Đa chuyên ngành — Nút giao cầu phức tạp</div>
+                            <div class="design-work-desc" data-i18n="dsg.w4_desc">Phối hợp BIM giữa kết cấu, kiến trúc và MEP cho nút giao nhiều tầng. Phát hiện xung đột trong Navisworks trước khi thi công, tiết kiệm chi phí phát sinh.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow -->
+                <div class="design-section-title">🔄 <span data-i18n="dsg.wf_title">Quy trình triển khai</span></div>
+                <div class="design-workflow">
+                    <div class="design-wf-step"><div class="wf-num">01</div><div class="wf-icon">📋</div><div class="wf-label" data-i18n="dsg.wf1">Tiếp nhận yêu cầu</div><div class="wf-sub">CAD / IFC / PDF</div></div>
+                    <div class="design-wf-step"><div class="wf-num">02</div><div class="wf-icon">🏗️</div><div class="wf-label" data-i18n="dsg.wf2">Xây dựng mô hình BIM</div><div class="wf-sub">Revit + Civil 3D</div></div>
+                    <div class="design-wf-step"><div class="wf-num">03</div><div class="wf-icon">⚡</div><div class="wf-label" data-i18n="dsg.wf3">Tự động hóa Dynamo</div><div class="wf-sub">Bố trí, tag, dim</div></div>
+                    <div class="design-wf-step"><div class="wf-num">04</div><div class="wf-icon">🔍</div><div class="wf-label" data-i18n="dsg.wf4">Kiểm tra xung đột</div><div class="wf-sub">Navisworks Clash</div></div>
+                    <div class="design-wf-step"><div class="wf-num">05</div><div class="wf-icon">📄</div><div class="wf-label" data-i18n="dsg.wf5">Xuất bản vẽ</div><div class="wf-sub">PDF / DWG / IFC</div></div>
+                    <div class="design-wf-step"><div class="wf-num">06</div><div class="wf-icon">📊</div><div class="wf-label" data-i18n="dsg.wf6">Bóc tách khối lượng</div><div class="wf-sub">Excel / Dự toán</div></div>
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align:center; padding: 2.5rem; background: linear-gradient(135deg, #1a1a2e, #0f3460); border-radius: 16px; color: white;">
+                    <p style="font-family:var(--font-display); font-size:1.3rem; font-weight:800; color:white; margin-bottom:0.5rem;" data-i18n="dsg.cta_title">Cần triển khai Thiết kế BIM cho dự án của bạn?</p>
+                    <p style="color:rgba(255,255,255,0.7); margin-bottom:1.5rem;" data-i18n="dsg.cta_desc">Liên hệ để được tư vấn phương án thiết kế BIM tối ưu — tiết kiệm thời gian và chi phí thiết kế</p>
+                    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                        <a href="tel:+84399762377" class="btn btn-primary" data-i18n="corp.cta_call">📞 Gọi ngay</a>
+                        <a href="mailto:hoangquoctuan1395@gmail.com" class="btn btn-secondary" data-i18n="corp.cta_email">✉️ Gửi Email</a>
+                    </div>
                 </div>
             </div>
 

@@ -92,7 +92,7 @@ img {
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   margin-bottom: 3rem;
   color: var(--primary-red);
 }
