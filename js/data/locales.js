@@ -1,6 +1,6 @@
 const locales = {
     vi: {
-        "head.title": "Portfolio | Đổi mới & Công nghệ",
+        "head.title": "Hoang Quoc Tuan | Portfolio",
         "nav.subtitle": "BIM & Digital Twin",
         "nav.home": "Trang chủ",
         "nav.about": "Về tôi",
@@ -125,7 +125,7 @@ const locales = {
         "ab.zalo_label": "Zalo — Quét QR để kết nối"
     },
     en: {
-        "head.title": "Portfolio | Innovation & Technology",
+        "head.title": "Hoang Quoc Tuan | Portfolio",
         "nav.subtitle": "BIM & Digital Twin",
         "nav.home": "Home",
         "nav.about": "About",
@@ -250,7 +250,7 @@ const locales = {
         "ab.zalo_label": "Zalo — Scan QR to connect"
     },
     zh: {
-        "head.title": "个人作品集 | 创新与科技",
+        "head.title": "Hoang Quoc Tuan | Portfolio",
         "nav.subtitle": "BIM及数字孪生",
         "nav.home": "主页",
         "nav.about": "关于",
@@ -375,7 +375,7 @@ const locales = {
         "ab.zalo_label": "Zalo — 扫码联系"
     },
     ja: {
-        "head.title": "ポートフォリオ | 革新とテクノロジー",
+        "head.title": "Hoang Quoc Tuan | Portfolio",
         "nav.subtitle": "BIMとデジタルツイン",
         "nav.home": "ホーム",
         "nav.about": "概要",
