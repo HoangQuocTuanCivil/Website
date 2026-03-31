@@ -237,59 +237,64 @@
         .contact-section {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: white;
-            padding: 5rem 0;
+            padding: 4rem 0;
         }
         .contact-section .section-heading { color: white; }
         .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
         }
         .contact-card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
             transition: var(--transition);
             text-decoration: none;
             color: white;
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
         .contact-card:hover {
             background: rgba(255,255,255,0.1);
             border-color: var(--primary-red);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         .contact-card.zalo:hover { border-color: #0068ff; }
         .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
         }
         .contact-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
         }
         .contact-value {
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         .zalo-qr-wrapper {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
         .zalo-qr-img {
-            width: 140px;
-            height: 140px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 8px;
             background: white;
-            padding: 8px;
-            margin-top: 1rem;
+            padding: 4px;
         }
 
         @media (max-width: 768px) {
