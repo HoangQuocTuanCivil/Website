@@ -221,24 +221,35 @@
             animation-delay: var(--delay, 0s), var(--delay2, 0s);
         }
         /* Each badge: near-transparent tinted bg + strong glow color */
-        .hf-1  { background:linear-gradient(135deg,rgba(99,102,241,0.14),rgba(139,92,246,0.06));  --fc:rgba(139,92,246,0.7);  top:130px; left:2%;   --delay:0s;    --delay2:-0.5s; --dur:5.8s; --dur2:3.2s; }
-        .hf-2  { background:linear-gradient(135deg,rgba(239,68,68,0.14),rgba(220,38,38,0.06));    --fc:rgba(239,68,68,0.7);   top:155px; right:3%;  --delay:-1.2s; --delay2:-1.8s; --dur:5.1s; --dur2:2.9s; }
-        .hf-3  { background:linear-gradient(135deg,rgba(14,165,233,0.14),rgba(2,132,199,0.06));   --fc:rgba(14,165,233,0.7);  top:54%;   left:2.5%; --delay:-2.6s; --delay2:-0.3s; --dur:6.4s; --dur2:3.8s; }
-        .hf-4  { background:linear-gradient(135deg,rgba(34,197,94,0.14),rgba(22,163,74,0.06));    --fc:rgba(34,197,94,0.7);   bottom:17%;left:17%;  --delay:-0.5s; --delay2:-2.1s; --dur:5.5s; --dur2:3.1s; }
-        .hf-5  { background:linear-gradient(135deg,rgba(245,158,11,0.14),rgba(217,119,6,0.06));   --fc:rgba(245,158,11,0.7);  top:128px; left:40%;  --delay:-3.1s; --delay2:-1.4s; --dur:4.9s; --dur2:2.7s; }
-        .hf-6  { background:linear-gradient(135deg,rgba(168,85,247,0.14),rgba(147,51,234,0.06));  --fc:rgba(168,85,247,0.7);  bottom:13%;right:5%;  --delay:-1.7s; --delay2:-0.8s; --dur:6.1s; --dur2:3.5s; }
-        .hf-7  { background:linear-gradient(135deg,rgba(244,63,94,0.14),rgba(225,29,72,0.06));    --fc:rgba(244,63,94,0.7);   top:41%;   left:1%;   --delay:-4.2s; --delay2:-2.6s; --dur:6.8s; --dur2:4.1s; }
-        .hf-8  { background:linear-gradient(135deg,rgba(6,182,212,0.14),rgba(8,145,178,0.06));    --fc:rgba(6,182,212,0.7);   bottom:26%;right:2%;  --delay:-0.9s; --delay2:-1.1s; --dur:5.3s; --dur2:3.0s; }
-        .hf-9  { background:linear-gradient(135deg,rgba(16,185,129,0.14),rgba(5,150,105,0.06));   --fc:rgba(16,185,129,0.7);  top:70%;   left:5.5%; --delay:-2.3s; --delay2:-0.6s; --dur:5.7s; --dur2:3.3s; }
-        .hf-10 { background:linear-gradient(135deg,rgba(56,189,248,0.14),rgba(14,165,233,0.06));  --fc:rgba(56,189,248,0.7);  top:142px; right:29%; --delay:-1.6s; --delay2:-2.4s; --dur:5.4s; --dur2:2.8s; }
+        /* positions set by JS — only visual vars here */
+        .hf-1  { background:linear-gradient(135deg,rgba(99,102,241,0.14),rgba(139,92,246,0.06));  --fc:rgba(139,92,246,0.7);  --delay:0s;    --delay2:-0.5s; --dur:5.8s; --dur2:3.2s; }
+        .hf-2  { background:linear-gradient(135deg,rgba(239,68,68,0.14),rgba(220,38,38,0.06));    --fc:rgba(239,68,68,0.7);   --delay:-1.2s; --delay2:-1.8s; --dur:5.1s; --dur2:2.9s; }
+        .hf-3  { background:linear-gradient(135deg,rgba(14,165,233,0.14),rgba(2,132,199,0.06));   --fc:rgba(14,165,233,0.7);  --delay:-2.6s; --delay2:-0.3s; --dur:6.4s; --dur2:3.8s; }
+        .hf-4  { background:linear-gradient(135deg,rgba(34,197,94,0.14),rgba(22,163,74,0.06));    --fc:rgba(34,197,94,0.7);   --delay:-0.5s; --delay2:-2.1s; --dur:5.5s; --dur2:3.1s; }
+        .hf-5  { background:linear-gradient(135deg,rgba(245,158,11,0.14),rgba(217,119,6,0.06));   --fc:rgba(245,158,11,0.7);  --delay:-3.1s; --delay2:-1.4s; --dur:4.9s; --dur2:2.7s; }
+        .hf-6  { background:linear-gradient(135deg,rgba(168,85,247,0.14),rgba(147,51,234,0.06));  --fc:rgba(168,85,247,0.7);  --delay:-1.7s; --delay2:-0.8s; --dur:6.1s; --dur2:3.5s; }
+        .hf-7  { background:linear-gradient(135deg,rgba(244,63,94,0.14),rgba(225,29,72,0.06));    --fc:rgba(244,63,94,0.7);   --delay:-4.2s; --delay2:-2.6s; --dur:6.8s; --dur2:4.1s; }
+        .hf-8  { background:linear-gradient(135deg,rgba(6,182,212,0.14),rgba(8,145,178,0.06));    --fc:rgba(6,182,212,0.7);   --delay:-0.9s; --delay2:-1.1s; --dur:5.3s; --dur2:3.0s; }
+        .hf-9  { background:linear-gradient(135deg,rgba(16,185,129,0.14),rgba(5,150,105,0.06));   --fc:rgba(16,185,129,0.7);  --delay:-2.3s; --delay2:-0.6s; --dur:5.7s; --dur2:3.3s; }
+        .hf-10 { background:linear-gradient(135deg,rgba(56,189,248,0.14),rgba(14,165,233,0.06));  --fc:rgba(56,189,248,0.7);  --delay:-1.6s; --delay2:-2.4s; --dur:5.4s; --dur2:2.8s; }
+
+        /* Orbit system at far left of hero */
+        .hero > .orbit-system {
+            top: 50%;
+            left: -145px;
+            transform: translateY(-50%) scale(1.05);
+            z-index: 4;
+            pointer-events: none;
+            width: min(560px, 95%);
+            height: min(560px, 95%);
+            filter: drop-shadow(0 14px 28px rgba(0,0,0,0.25));
+        }
 
         @keyframes hfDrift {
-            0%   { transform: translate(0px,   0px)  rotate(-0.6deg) scale(1);    }
-            20%  { transform: translate(5px,  -12px) rotate(0.4deg)  scale(1.01); }
-            40%  { transform: translate(-4px, -20px) rotate(0.9deg)  scale(1.02); }
-            60%  { transform: translate(7px,  -14px) rotate(-0.3deg) scale(1.01); }
-            80%  { transform: translate(-2px,  -7px) rotate(-0.7deg) scale(1);    }
-            100% { transform: translate(0px,   0px)  rotate(-0.6deg) scale(1);    }
+            0%   { transform: rotate(-0.7deg) scale(1);    }
+            33%  { transform: rotate(0.6deg)  scale(1.02); }
+            66%  { transform: rotate(0.8deg)  scale(1.01); }
+            100% { transform: rotate(-0.7deg) scale(1);    }
         }
         @keyframes hfGlow {
             0%, 100% {
@@ -323,9 +334,51 @@
         <div class="hero-float hf-9">🏗️ BIM</div>
         <div class="hero-float hf-10">📊 Data</div>
 
+        <!-- Orbit system — positioned at far left of hero -->
+        <div class="orbit-system">
+            <div class="core"></div>
+            <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
+            <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
+            <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
+            <div class="tech-particle tp-1">BIM</div>
+            <div class="tech-particle tp-2">AI</div>
+            <div class="tech-particle tp-3">IoT</div>
+            <div class="tech-particle tp-4">3D</div>
+            <div class="tech-particle tp-5">DT</div>
+            <div class="tech-particle tp-6">VR</div>
+            <div class="tech-particle tp-7">AR</div>
+            <div class="tech-particle tp-8">CDE</div>
+            <div class="tech-particle tp-9">API</div>
+            <div class="tech-hex hex-1"></div>
+            <div class="tech-hex hex-2"></div>
+            <div class="tech-hex hex-3"></div>
+            <div class="tech-hex hex-4"></div>
+            <div class="tech-ring ring-1"></div>
+            <div class="tech-ring ring-2"></div>
+            <div class="tech-ring ring-3"></div>
+            <div class="tech-dot dot-1"></div>
+            <div class="tech-dot dot-2"></div>
+            <div class="tech-dot dot-3"></div>
+            <div class="tech-dot dot-4"></div>
+            <div class="tech-dot dot-5"></div>
+            <div class="tech-dot dot-6"></div>
+            <div class="tech-dot dot-7"></div>
+            <div class="tech-dot dot-8"></div>
+            <div class="tech-dot dot-9"></div>
+            <div class="tech-dot dot-10"></div>
+            <div class="orbit orbit-4"><div class="satellite sat-4"></div></div>
+            <div class="orbit orbit-5"></div>
+            <div class="tech-particle tp-10">ML</div>
+            <div class="tech-particle tp-11">CLOUD</div>
+            <div class="tech-particle tp-12">GIS</div>
+            <div class="data-node dn-1"></div>
+            <div class="data-node dn-2"></div>
+            <div class="data-node dn-3"></div>
+        </div>
+
         <div class="container hero-container">
 
-            <!-- LEFT: Text content + Orbit floating right edge -->
+            <!-- LEFT: Text content -->
             <div class="hero-content">
                 <h1 class="hero-title" data-i18n="hero.title">ĐỔI MỚI: SÁNG TẠO, <br><span class="highlight-green">CÔNG NGHỆ</span></h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">Cung cấp giải pháp số hóa toàn diện và thiết kế đột phá cho tương lai.</p>
@@ -335,48 +388,8 @@
                 </div>
             </div>
 
-            <!-- RIGHT: Slideshow fills hero-visual -->
+            <!-- RIGHT: Slideshow -->
             <div class="hero-visual">
-                <div class="orbit-system">
-                    <div class="core"></div>
-                    <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
-                    <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
-                    <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
-                    <div class="tech-particle tp-1">BIM</div>
-                    <div class="tech-particle tp-2">AI</div>
-                    <div class="tech-particle tp-3">IoT</div>
-                    <div class="tech-particle tp-4">3D</div>
-                    <div class="tech-particle tp-5">DT</div>
-                    <div class="tech-particle tp-6">VR</div>
-                    <div class="tech-particle tp-7">AR</div>
-                    <div class="tech-particle tp-8">CDE</div>
-                    <div class="tech-particle tp-9">API</div>
-                    <div class="tech-hex hex-1"></div>
-                    <div class="tech-hex hex-2"></div>
-                    <div class="tech-hex hex-3"></div>
-                    <div class="tech-hex hex-4"></div>
-                    <div class="tech-ring ring-1"></div>
-                    <div class="tech-ring ring-2"></div>
-                    <div class="tech-ring ring-3"></div>
-                    <div class="tech-dot dot-1"></div>
-                    <div class="tech-dot dot-2"></div>
-                    <div class="tech-dot dot-3"></div>
-                    <div class="tech-dot dot-4"></div>
-                    <div class="tech-dot dot-5"></div>
-                    <div class="tech-dot dot-6"></div>
-                    <div class="tech-dot dot-7"></div>
-                    <div class="tech-dot dot-8"></div>
-                    <div class="tech-dot dot-9"></div>
-                    <div class="tech-dot dot-10"></div>
-                    <div class="orbit orbit-4"><div class="satellite sat-4"></div></div>
-                    <div class="orbit orbit-5"></div>
-                    <div class="tech-particle tp-10">ML</div>
-                    <div class="tech-particle tp-11">CLOUD</div>
-                    <div class="tech-particle tp-12">GIS</div>
-                    <div class="data-node dn-1"></div>
-                    <div class="data-node dn-2"></div>
-                    <div class="data-node dn-3"></div>
-                </div>
                 <div class="slide" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;"><img src="assets/corp1.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp2.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp3.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
@@ -563,6 +576,58 @@
         resize(); init();
         window.addEventListener('resize', function(){ resize(); init(); });
         draw();
+    })();
+
+    /* ========= Hero floating badges — random wandering ========= */
+    (function(){
+        var hero   = document.getElementById('home');
+        var badges = Array.from(document.querySelectorAll('.hero-float'));
+        if (!hero || !badges.length) return;
+
+        var states = [];
+
+        function randTarget(W, H, bW, bH) {
+            return {
+                x: Math.random() * Math.max(10, W - bW - 10) + 5,
+                y: Math.random() * Math.max(10, H - bH - 130) + 120
+            };
+        }
+
+        function init() {
+            var W = hero.offsetWidth, H = hero.offsetHeight;
+            states = badges.map(function(el) {
+                var bW = el.offsetWidth  || 220;
+                var bH = el.offsetHeight || 60;
+                var p  = randTarget(W, H, bW, bH);
+                var t  = randTarget(W, H, bW, bH);
+                el.style.left   = p.x + 'px';
+                el.style.top    = p.y + 'px';
+                el.style.right  = 'auto';
+                el.style.bottom = 'auto';
+                return { el:el, x:p.x, y:p.y, tx:t.x, ty:t.y,
+                         bW:bW, bH:bH,
+                         spd: 0.004 + Math.random() * 0.005 };
+            });
+        }
+
+        function tick() {
+            var W = hero.offsetWidth, H = hero.offsetHeight;
+            states.forEach(function(s) {
+                var dx = s.tx - s.x, dy = s.ty - s.y;
+                if (Math.sqrt(dx*dx + dy*dy) < 25) {
+                    var p = randTarget(W, H, s.bW, s.bH);
+                    s.tx = p.x; s.ty = p.y;
+                }
+                s.x += dx * s.spd;
+                s.y += dy * s.spd;
+                s.el.style.left = s.x + 'px';
+                s.el.style.top  = s.y + 'px';
+            });
+            requestAnimationFrame(tick);
+        }
+
+        setTimeout(function(){ init(); tick(); }, 120);
+        window.addEventListener('resize', function(){ setTimeout(init, 200); });
     })();
 
     </script>
