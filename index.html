@@ -128,6 +128,161 @@
         .cta-title { font-size: 1.6rem; margin-bottom: 0.5rem; }
         .cta-desc  { font-size: 0.95rem; margin-bottom: 1rem; }
         .btn-lg    { padding: 0.7rem 2rem; font-size: 1rem; }
+
+        /* ---- Cosmos canvas ---- */
+        .hero { position: relative; }
+        #heroCosmosCanvas {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0; pointer-events: none;
+        }
+
+        /* ---- Data stream lines ---- */
+        .ds-line {
+            position: absolute; width: 1px; top: 0; height: 200%;
+            z-index: 0; pointer-events: none;
+            animation: dsFlow 5s linear infinite;
+        }
+        .dl-1 { left: 7%;  background: linear-gradient(to bottom, transparent 0%, rgba(0,157,1,0.5) 50%, transparent 100%); animation-duration: 5.2s; animation-delay: 0s; }
+        .dl-2 { left: 21%; background: linear-gradient(to bottom, transparent 0%, rgba(237,28,36,0.45) 50%, transparent 100%); animation-duration: 4s;   animation-delay: -1.8s; }
+        .dl-3 { right: 24%;background: linear-gradient(to bottom, transparent 0%, rgba(99,102,241,0.45) 50%, transparent 100%); animation-duration: 6.2s; animation-delay: -3.1s; }
+        .dl-4 { right: 9%; background: linear-gradient(to bottom, transparent 0%, rgba(6,182,212,0.45) 50%, transparent 100%); animation-duration: 4.8s; animation-delay: -0.9s; }
+        .dl-5 { left: 49%; background: linear-gradient(to bottom, transparent 0%, rgba(168,85,247,0.4) 50%, transparent 100%); animation-duration: 5.6s; animation-delay: -2.4s; }
+        @keyframes dsFlow {
+            0%   { transform: translateY(-100%); }
+            100% { transform: translateY(50%); }
+        }
+
+        /* ---- Enhanced orbits 4 & 5 ---- */
+        .orbit-4 {
+            width: 450px; height: 450px;
+            animation-duration: 55s; animation-direction: reverse;
+            border: 1px dashed rgba(6,182,212,0.18);
+        }
+        .orbit-5 {
+            width: 525px; height: 525px;
+            animation-duration: 88s;
+            border: 1px dotted rgba(168,85,247,0.14);
+        }
+        .sat-4 {
+            width: 14px; height: 14px;
+            background: linear-gradient(135deg, #06b6d4, #0284c7);
+            box-shadow: 0 0 16px rgba(6,182,212,0.9);
+            border-radius: 50%;
+        }
+
+        /* ---- Extra tech particles ---- */
+        .tp-10 { background: linear-gradient(135deg, #0ea5e9, #0284c7); top: 195px; right: -88px; animation-delay: -1.8s; animation-duration: 4.1s; }
+        .tp-11 { background: linear-gradient(135deg, #f43f5e, #be123c); bottom: 178px; left: -102px; animation-delay: -0.3s; animation-duration: 3.7s; }
+        .tp-12 { background: linear-gradient(135deg, #10b981, #047857); top: -42px; left: 88px; animation-delay: -2.2s; animation-duration: 4.8s; }
+
+        /* ---- Data nodes ---- */
+        .data-node {
+            position: absolute; border-radius: 50%;
+            animation: dataPulse 2.2s ease-in-out infinite;
+        }
+        .dn-1 { width: 9px; height: 9px; background: #06b6d4; top: -108px; right: 72px; box-shadow: 0 0 14px #06b6d4; animation-delay: 0s; }
+        .dn-2 { width: 7px; height: 7px; background: #a855f7; bottom: -88px; left: 52px; box-shadow: 0 0 14px #a855f7; animation-delay: -0.8s; }
+        .dn-3 { width: 8px; height: 8px; background: #f97316; top: 92px; left: -118px; box-shadow: 0 0 14px #f97316; animation-delay: -1.5s; }
+        @keyframes dataPulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50%       { transform: scale(2.4); opacity: 0.1; }
+        }
+
+        /* ---- Tech Ecosystem Section ---- */
+        .techverse {
+            position: relative;
+            background: linear-gradient(160deg, #040c1e 0%, #090f28 55%, #07102b 100%);
+            padding: 4.5rem 0 4rem; overflow: hidden;
+        }
+        #nnCanvas {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+        }
+        .tv-header {
+            display: flex; align-items: center; gap: 1.5rem;
+            margin-bottom: 0.7rem; position: relative; z-index: 1;
+        }
+        .tv-line {
+            flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+        }
+        .tv-title {
+            font-family: var(--font-display);
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            font-weight: 900; color: white;
+            letter-spacing: 0.2em; white-space: nowrap;
+        }
+        .tv-subtitle {
+            text-align: center; font-size: 0.72rem;
+            color: rgba(255,255,255,0.32); letter-spacing: 0.12em;
+            text-transform: uppercase; margin-bottom: 2.5rem;
+            position: relative; z-index: 1;
+        }
+        .tv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem; position: relative; z-index: 1;
+        }
+        .tv-card {
+            background: rgba(255,255,255,0.026);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px; padding: 1.4rem 1rem;
+            text-align: center; position: relative; overflow: hidden;
+            transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+            animation: tvFloat 5.5s ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+            cursor: default;
+        }
+        .tv-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 0%, var(--c, #fff) 0%, transparent 70%);
+            opacity: 0.04; transition: opacity 0.4s;
+        }
+        .tv-card::after {
+            content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--c, rgba(255,255,255,0.3)), transparent);
+            opacity: 0.5;
+        }
+        .tv-card:hover { transform: translateY(-10px) scale(1.03); border-color: var(--c, rgba(255,255,255,0.2)); background: rgba(255,255,255,0.054); }
+        .tv-card:hover::before { opacity: 0.12; }
+        .tv-icon {
+            font-size: 1.9rem; margin-bottom: 0.6rem; display: block;
+            filter: drop-shadow(0 0 8px var(--c, rgba(255,255,255,0.5)));
+            animation: iconPulse 3.5s ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+        }
+        .tv-name { font-family: var(--font-display); font-size: 0.82rem; font-weight: 900; color: white; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+        .tv-desc { font-size: 0.7rem; color: rgba(255,255,255,0.38); line-height: 1.5; }
+        .tv-badge {
+            display: inline-block; font-size: 0.58rem; font-weight: 700;
+            padding: 2px 7px; border-radius: 20px;
+            background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.48); letter-spacing: 0.06em; margin-top: 0.5rem;
+        }
+        @keyframes tvFloat {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
+        }
+        @keyframes iconPulse {
+            0%, 100% { filter: drop-shadow(0 0 8px  var(--c, rgba(255,255,255,0.4))); }
+            50%       { filter: drop-shadow(0 0 18px var(--c, rgba(255,255,255,0.75))); }
+        }
+        @media (max-width: 900px) {
+            .tv-grid { grid-template-columns: repeat(2, 1fr); }
+            .orbit-4 { width: 400px; height: 400px; }
+            .orbit-5 { width: 460px; height: 460px; }
+        }
+        @media (max-width: 768px) {
+            .orbit-4, .orbit-5 { display: none; }
+            .dl-3, .dl-4, .dl-5 { display: none; }
+        }
+        @media (max-width: 500px) {
+            .tv-grid { gap: 0.7rem; }
+            .tv-card { padding: 1rem 0.75rem; }
+            .tv-icon { font-size: 1.55rem; }
+        }
     </style>
 </head>
 <body>
@@ -168,6 +323,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <canvas id="heroCosmosCanvas"></canvas>
+        <div class="ds-line dl-1"></div>
+        <div class="ds-line dl-2"></div>
+        <div class="ds-line dl-3"></div>
+        <div class="ds-line dl-4"></div>
+        <div class="ds-line dl-5"></div>
         <div class="container hero-container">
 
             <!-- LEFT: Text content + Orbit floating right edge -->
@@ -213,6 +374,14 @@
                     <div class="tech-dot dot-8"></div>
                     <div class="tech-dot dot-9"></div>
                     <div class="tech-dot dot-10"></div>
+                    <div class="orbit orbit-4"><div class="satellite sat-4"></div></div>
+                    <div class="orbit orbit-5"></div>
+                    <div class="tech-particle tp-10">ML</div>
+                    <div class="tech-particle tp-11">CLOUD</div>
+                    <div class="tech-particle tp-12">GIS</div>
+                    <div class="data-node dn-1"></div>
+                    <div class="data-node dn-2"></div>
+                    <div class="data-node dn-3"></div>
                 </div>
                 <div class="slide" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;"><img src="assets/corp1.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp2.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
@@ -256,6 +425,69 @@
             setInterval(() => goTo(current + 1), 3000);
         })();
     </script>
+
+    <!-- Tech Ecosystem Section -->
+    <section class="techverse">
+        <canvas id="nnCanvas"></canvas>
+        <div class="container" style="position:relative;z-index:1;">
+            <div class="tv-header">
+                <div class="tv-line"></div>
+                <h2 class="tv-title">HỆ SINH THÁI CÔNG NGHỆ</h2>
+                <div class="tv-line"></div>
+            </div>
+            <p class="tv-subtitle">Công nghệ tiên tiến &nbsp;·&nbsp; Giải pháp toàn diện &nbsp;·&nbsp; Tương lai số hóa</p>
+            <div class="tv-grid">
+                <div class="tv-card" style="--c:#ef4444;--delay:0s">
+                    <span class="tv-icon">🤖</span>
+                    <div class="tv-name">AI / ML</div>
+                    <div class="tv-desc">Machine Learning & Nhận diện thông minh tự động</div>
+                    <span class="tv-badge">Artificial Intelligence</span>
+                </div>
+                <div class="tv-card" style="--c:#06b6d4;--delay:0.35s">
+                    <span class="tv-icon">📡</span>
+                    <div class="tv-name">IoT</div>
+                    <div class="tv-desc">Cảm biến thông minh & Kết nối vạn vật</div>
+                    <span class="tv-badge">Internet of Things</span>
+                </div>
+                <div class="tv-card" style="--c:#22c55e;--delay:0.7s">
+                    <span class="tv-icon">🌐</span>
+                    <div class="tv-name">Digital Twin</div>
+                    <div class="tv-desc">Bản sao kỹ thuật số công trình thực</div>
+                    <span class="tv-badge">Digital Transformation</span>
+                </div>
+                <div class="tv-card" style="--c:#f59e0b;--delay:1.05s">
+                    <span class="tv-icon">🏗️</span>
+                    <div class="tv-name">BIM 3D</div>
+                    <div class="tv-desc">Mô hình thông tin công trình thế hệ mới</div>
+                    <span class="tv-badge">Building Info Model</span>
+                </div>
+                <div class="tv-card" style="--c:#a855f7;--delay:1.4s">
+                    <span class="tv-icon">⚡</span>
+                    <div class="tv-name">Automation</div>
+                    <div class="tv-desc">Dynamo · API · Tự động hóa quy trình</div>
+                    <span class="tv-badge">Process Automation</span>
+                </div>
+                <div class="tv-card" style="--c:#0ea5e9;--delay:1.75s">
+                    <span class="tv-icon">☁️</span>
+                    <div class="tv-name">Cloud & API</div>
+                    <div class="tv-desc">Tích hợp đám mây & Hệ sinh thái số</div>
+                    <span class="tv-badge">Cloud Integration</span>
+                </div>
+                <div class="tv-card" style="--c:#f43f5e;--delay:2.1s">
+                    <span class="tv-icon">🥽</span>
+                    <div class="tv-name">VR / AR</div>
+                    <div class="tv-desc">Thực tế ảo & Thực tế tăng cường</div>
+                    <span class="tv-badge">Immersive Tech</span>
+                </div>
+                <div class="tv-card" style="--c:#10b981;--delay:2.45s">
+                    <span class="tv-icon">🔍</span>
+                    <div class="tv-name">Scan to BIM</div>
+                    <div class="tv-desc">LiDAR Point Cloud → Mô hình số hóa</div>
+                    <span class="tv-badge">Reality Capture</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA Section -->
     <section class="cta">
@@ -306,5 +538,156 @@
     <script src="js/data/locales.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    /* ========= Hero Cosmos Canvas ========= */
+    (function(){
+        var c = document.getElementById('heroCosmosCanvas');
+        if (!c) return;
+        var ctx = c.getContext('2d');
+        var W, H, stars = [], nebulas = [], shooters = [];
+
+        function resize() {
+            var sec = c.parentElement;
+            W = c.width  = sec.clientWidth;
+            H = c.height = sec.clientHeight;
+        }
+
+        function init() {
+            stars = [];
+            for (var i = 0; i < 200; i++) {
+                stars.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: Math.random() * 1.3 + 0.25,
+                    a: Math.random() * Math.PI * 2,
+                    va: (Math.random() - 0.5) * 0.018,
+                    vx: (Math.random() - 0.5) * 0.055,
+                    vy: -Math.random() * 0.045 - 0.01
+                });
+            }
+            nebulas = [
+                { px:0.14, py:0.22, r:200, rgb:'237,28,36',   a:0.026, dx:0.00008,  dy:0.00005  },
+                { px:0.86, py:0.42, r:240, rgb:'0,157,1',     a:0.02,  dx:-0.00005, dy:0.00009  },
+                { px:0.48, py:0.82, r:170, rgb:'99,102,241',  a:0.022, dx:0.00003,  dy:-0.00006 },
+                { px:0.04, py:0.62, r:150, rgb:'6,182,212',   a:0.018, dx:0.0001,   dy:0.00003  },
+                { px:0.94, py:0.09, r:170, rgb:'168,85,247',  a:0.021, dx:-0.00004, dy:0.0001   }
+            ];
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+
+            /* Nebulas */
+            nebulas.forEach(function(n) {
+                n.px = Math.max(0.02, Math.min(0.98, n.px + n.dx));
+                n.py = Math.max(0.02, Math.min(0.98, n.py + n.dy));
+                if (n.px <= 0.02 || n.px >= 0.98) n.dx = -n.dx;
+                if (n.py <= 0.02 || n.py >= 0.98) n.dy = -n.dy;
+                var g = ctx.createRadialGradient(n.px*W, n.py*H, 0, n.px*W, n.py*H, n.r);
+                g.addColorStop(0, 'rgba(' + n.rgb + ',' + n.a + ')');
+                g.addColorStop(1, 'rgba(' + n.rgb + ',0)');
+                ctx.beginPath(); ctx.arc(n.px*W, n.py*H, n.r, 0, Math.PI*2);
+                ctx.fillStyle = g; ctx.fill();
+            });
+
+            /* Stars */
+            stars.forEach(function(s) {
+                s.a += s.va;
+                var alpha = 0.12 + Math.abs(Math.sin(s.a)) * 0.68;
+                s.x = (s.x + s.vx + W) % W;
+                s.y = (s.y + s.vy + H) % H;
+                ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+                ctx.fillStyle = 'rgba(255,255,255,' + alpha.toFixed(2) + ')';
+                ctx.fill();
+                if (s.r > 1) {
+                    var gw = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 4);
+                    gw.addColorStop(0, 'rgba(210,225,255,' + (alpha * 0.18).toFixed(2) + ')');
+                    gw.addColorStop(1, 'rgba(210,225,255,0)');
+                    ctx.fillStyle = gw;
+                    ctx.beginPath(); ctx.arc(s.x, s.y, s.r*4, 0, Math.PI*2); ctx.fill();
+                }
+            });
+
+            /* Shooting stars */
+            if (Math.random() < 0.004) {
+                shooters.push({
+                    x: Math.random() * W * 0.65, y: Math.random() * H * 0.38,
+                    vx: 5 + Math.random() * 4.5, vy: 2 + Math.random() * 2.5,
+                    life: 1, len: 80 + Math.random() * 65
+                });
+            }
+            shooters = shooters.filter(function(s){ return s.life > 0; });
+            shooters.forEach(function(s) {
+                s.x += s.vx; s.y += s.vy; s.life -= 0.028;
+                var g = ctx.createLinearGradient(s.x, s.y, s.x - s.len*0.62, s.y - s.len*0.32);
+                g.addColorStop(0, 'rgba(255,255,255,' + s.life.toFixed(2) + ')');
+                g.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.beginPath(); ctx.moveTo(s.x, s.y);
+                ctx.lineTo(s.x - s.len*0.62, s.y - s.len*0.32);
+                ctx.strokeStyle = g; ctx.lineWidth = 1.6; ctx.stroke();
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        resize(); init();
+        window.addEventListener('resize', function(){ resize(); init(); });
+        draw();
+    })();
+
+    /* ========= Neural Network Canvas (Tech section) ========= */
+    (function(){
+        var c = document.getElementById('nnCanvas');
+        if (!c) return;
+        var ctx = c.getContext('2d');
+        var sec = c.parentElement;
+        var W, H, nodes = [];
+
+        function resize() {
+            W = c.width  = sec.offsetWidth;
+            H = c.height = sec.offsetHeight;
+        }
+
+        function init() {
+            nodes = [];
+            var count = Math.min(40, Math.floor(W * H / 7000));
+            for (var i = 0; i < count; i++) {
+                nodes.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    vx: (Math.random() - 0.5) * 0.38, vy: (Math.random() - 0.5) * 0.38,
+                    r: Math.random() * 2 + 0.8
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            nodes.forEach(function(n) {
+                n.x += n.vx; n.y += n.vy;
+                if (n.x < 0 || n.x > W) n.vx = -n.vx;
+                if (n.y < 0 || n.y > H) n.vy = -n.vy;
+            });
+            for (var i = 0; i < nodes.length; i++) {
+                for (var j = i + 1; j < nodes.length; j++) {
+                    var a = nodes[i], b = nodes[j];
+                    var d = Math.hypot(a.x - b.x, a.y - b.y);
+                    if (d < 165) {
+                        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+                        ctx.strokeStyle = 'rgba(120,165,255,' + ((1 - d/165) * 0.18).toFixed(2) + ')';
+                        ctx.lineWidth = 0.6; ctx.stroke();
+                    }
+                }
+            }
+            nodes.forEach(function(n) {
+                ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+                ctx.fillStyle = 'rgba(145,185,255,0.55)'; ctx.fill();
+            });
+            requestAnimationFrame(draw);
+        }
+
+        resize(); init();
+        window.addEventListener('resize', function(){ resize(); init(); });
+        draw();
+    })();
+    </script>
 </body>
 </html>
