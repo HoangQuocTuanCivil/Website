@@ -733,14 +733,18 @@
             <div class="tab-content" id="tab-model">
                 <style>
                     .model-hero-header {
-                        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
                         border-radius: 16px; padding: 2.5rem 3rem; margin-bottom: 2.5rem;
-                        display: flex; align-items: center; gap: 2rem;
-                        border-left: 5px solid var(--primary-red);
+                        color: white; position: relative; overflow: hidden;
+                    }
+                    .model-hero-header::before {
+                        content: ''; position: absolute; top: -30%; right: -10%;
+                        width: 300px; height: 300px; border-radius: 50%;
+                        background: radial-gradient(circle, rgba(237,28,36,0.2) 0%, transparent 70%);
                     }
                     .model-hero-header h3 {
                         font-family: var(--font-display); font-size: 1.6rem;
-                        font-weight: 800; color: white; margin-bottom: 0.5rem;
+                        font-weight: 800; color: white; line-height: 1.2; margin-bottom: 0.5rem;
                     }
                     .model-hero-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
                     .project-masonry {
@@ -945,13 +949,16 @@
             <div class="tab-content" id="tab-design">
                 <style>
                     .design-hero-header {
-                        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
                         border-radius: 16px; padding: 2.5rem 3rem; margin-bottom: 2.5rem;
-                        display: flex; align-items: center; gap: 2rem;
-                        border-left: 5px solid var(--primary-green);
+                        color: white; position: relative; overflow: hidden;
                     }
-                    .design-hero-header .dsh-icon { font-size: 3.5rem; flex-shrink: 0; }
-                    .design-hero-header h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+                    .design-hero-header::before {
+                        content: ''; position: absolute; top: -30%; right: -10%;
+                        width: 300px; height: 300px; border-radius: 50%;
+                        background: radial-gradient(circle, rgba(237,28,36,0.2) 0%, transparent 70%);
+                    }
+                    .design-hero-header h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: white; line-height: 1.2; margin-bottom: 0.5rem; }
                     .design-hero-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
                     .design-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
                     .design-cap-item { background: white; border-radius: 12px; padding: 1.4rem 1.5rem; box-shadow: var(--shadow-sm); border-top: 3px solid var(--primary-green); transition: var(--transition); display: flex; align-items: flex-start; gap: 0.8rem; }
@@ -1103,15 +1110,18 @@
             <div class="tab-content" id="tab-digital">
                 <style>
                     .digital-hero-header {
-                        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
                         border-radius: 16px; padding: 2.5rem 3rem; margin-bottom: 2.5rem;
-                        display: flex; align-items: center; gap: 2rem;
-                        border-left: 5px solid var(--primary-red);
+                        color: white; position: relative; overflow: hidden;
                     }
-                    .digital-hero-header .dh-icon { font-size: 3.5rem; flex-shrink: 0; }
+                    .digital-hero-header::before {
+                        content: ''; position: absolute; top: -30%; right: -10%;
+                        width: 300px; height: 300px; border-radius: 50%;
+                        background: radial-gradient(circle, rgba(237,28,36,0.2) 0%, transparent 70%);
+                    }
                     .digital-hero-header h3 {
                         font-family: var(--font-display); font-size: 1.6rem;
-                        font-weight: 800; color: white; margin-bottom: 0.5rem;
+                        font-weight: 800; color: white; line-height: 1.2; margin-bottom: 0.5rem;
                     }
                     .digital-hero-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
                     .digital-masonry {
