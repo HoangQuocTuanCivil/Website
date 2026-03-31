@@ -9,7 +9,10 @@
       "Bash(python -c \"from PIL import Image; print\\(''Pillow OK''\\)\")",
       "Bash(pip install:*)",
       "Bash(python:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "WebFetch(domain:www.pinterest.com)",
+      "Bash(\"d:/004. API/Website/CNAME\")",
+      "Bash(\"/d/004. API/hoangquoctuan.com/CNAME\")"
     ]
   }
 }
