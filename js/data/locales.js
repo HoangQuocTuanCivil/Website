@@ -126,7 +126,8 @@ const locales = {
         "ab.contact_heading": "Liên hệ <span style='color:var(--primary-green)'>Trực tiếp</span>",
         "ab.phone_label": "Điện thoại",
         "ab.zalo_label": "Zalo — Quét QR để kết nối",
-        "ab.yt_label": "Kênh YouTube"
+        "ab.yt_label": "Kênh YouTube",
+        "ab.qr_hint": "Quét mã QR để kết nối Zalo"
     },
     en: {
         "head.title": "Hoang Quoc Tuan | Portfolio",
@@ -255,7 +256,8 @@ const locales = {
         "ab.contact_heading": "Contact <span style='color:var(--primary-green)'>Directly</span>",
         "ab.phone_label": "Phone",
         "ab.zalo_label": "Zalo — Scan QR to connect",
-        "ab.yt_label": "YouTube Channel"
+        "ab.yt_label": "YouTube Channel",
+        "ab.qr_hint": "Scan QR code to connect on Zalo"
     },
     zh: {
         "head.title": "Hoang Quoc Tuan | Portfolio",
@@ -384,7 +386,8 @@ const locales = {
         "ab.contact_heading": "直接 <span style='color:var(--primary-green)'>联系</span>",
         "ab.phone_label": "电话",
         "ab.zalo_label": "Zalo — 扫码联系",
-        "ab.yt_label": "YouTube频道"
+        "ab.yt_label": "YouTube频道",
+        "ab.qr_hint": "扫描二维码连接Zalo"
     },
     ja: {
         "head.title": "Hoang Quoc Tuan | Portfolio",
@@ -513,6 +516,7 @@ const locales = {
         "ab.contact_heading": "<span style='color:var(--primary-green)'>直接</span> お問い合わせ",
         "ab.phone_label": "電話",
         "ab.zalo_label": "Zalo — QRスキャンで接続",
-        "ab.yt_label": "YouTubeチャンネル"
+        "ab.yt_label": "YouTubeチャンネル",
+        "ab.qr_hint": "QRコードをスキャンしてZaloに接続"
     }
 };
