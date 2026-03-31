@@ -346,12 +346,359 @@
 
 
             <div class="tab-content" id="tab-corp">
-                <div class="service-card" style="border-bottom-color: var(--primary-green);">
-                    <div class="service-icon green-icon">🏢</div>
-                    <h3 class="service-title" data-i18n="services.card2.title">Đào tạo BIM Doanh nghiệp</h3>
-                    <p class="service-desc" data-i18n="services.card2.desc">Thiết kế giáo trình chuyên biệt đáp ứng nhu cầu quy trình chuẩn hóa của từng doanh nghiệp.</p>
+                <style>
+                    .corp-hero {
+                        position: relative;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        margin-bottom: 3rem;
+                        min-height: 320px;
+                        display: flex;
+                        align-items: flex-end;
+                    }
+                    .corp-hero-img {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                    .corp-hero-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to top, rgba(10,10,30,0.92) 0%, rgba(10,10,30,0.4) 60%, transparent 100%);
+                    }
+                    .corp-hero-content {
+                        position: relative;
+                        z-index: 1;
+                        padding: 2.5rem;
+                        color: white;
+                    }
+                    .corp-hero-content h3 {
+                        font-family: var(--font-display);
+                        font-size: 2rem;
+                        font-weight: 900;
+                        line-height: 1.2;
+                        color: white;
+                        margin-bottom: 0.8rem;
+                    }
+                    .corp-hero-content p {
+                        font-size: 1rem;
+                        color: rgba(255,255,255,0.8);
+                        max-width: 650px;
+                    }
+                    .corp-badge {
+                        display: inline-block;
+                        background: var(--primary-red);
+                        color: white;
+                        padding: 4px 14px;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        margin-bottom: 1rem;
+                    }
+                    .corp-section {
+                        margin-bottom: 3rem;
+                    }
+                    .corp-section-title {
+                        font-family: var(--font-display);
+                        font-size: 1.3rem;
+                        font-weight: 800;
+                        margin-bottom: 1.5rem;
+                        padding-bottom: 0.8rem;
+                        border-bottom: 3px solid var(--primary-red);
+                        display: flex;
+                        align-items: center;
+                        gap: 0.6rem;
+                    }
+                    .corp-section-title.green { border-bottom-color: var(--primary-green); }
+                    /* Target Audience */
+                    .target-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 1.2rem;
+                    }
+                    .target-card {
+                        background: white;
+                        border-radius: 10px;
+                        padding: 1.5rem;
+                        box-shadow: var(--shadow-sm);
+                        border-top: 3px solid var(--primary-red);
+                        transition: var(--transition);
+                        text-align: center;
+                    }
+                    .target-card:nth-child(even) { border-top-color: var(--primary-green); }
+                    .target-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+                    .target-card .tc-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+                    .target-card .tc-title { font-weight: 700; font-size: 0.95rem; }
+                    /* Outcome chips */
+                    .outcome-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 0.8rem;
+                    }
+                    .outcome-item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 0.7rem;
+                        background: white;
+                        padding: 0.9rem 1.2rem;
+                        border-radius: 8px;
+                        box-shadow: var(--shadow-sm);
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                    }
+                    .outcome-item .oi-icon { font-size: 1.3rem; flex-shrink: 0; }
+                    /* Module blocks */
+                    .module-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1.2rem;
+                    }
+                    .module-card {
+                        background: white;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: var(--shadow-sm);
+                        transition: var(--transition);
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .module-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+                    .module-img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+                    .module-body {
+                        padding: 1.5rem;
+                        flex: 1;
+                    }
+                    .module-num {
+                        font-family: var(--font-display);
+                        font-size: 0.75rem;
+                        font-weight: 800;
+                        color: var(--primary-red);
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        margin-bottom: 0.4rem;
+                    }
+                    .module-card:nth-child(even) .module-num { color: var(--primary-green); }
+                    .module-title {
+                        font-family: var(--font-display);
+                        font-size: 1.05rem;
+                        font-weight: 700;
+                        margin-bottom: 0.8rem;
+                    }
+                    .module-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    .module-list li {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 0.5rem;
+                        font-size: 0.85rem;
+                        color: var(--text-muted);
+                        margin-bottom: 0.4rem;
+                        line-height: 1.4;
+                    }
+                    .module-list li::before { content: "▸"; color: var(--primary-red); flex-shrink: 0; }
+                    .module-card:nth-child(even) .module-list li::before { color: var(--primary-green); }
+                    /* Info boxes */
+                    .info-row {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 1rem;
+                        background: linear-gradient(135deg, #1a1a2e, #0f3460);
+                        border-radius: 16px;
+                        padding: 2rem;
+                        color: white;
+                        margin-bottom: 3rem;
+                    }
+                    .info-box { text-align: center; }
+                    .info-box .ib-num {
+                        font-family: var(--font-display);
+                        font-size: 2rem;
+                        font-weight: 900;
+                        color: var(--primary-green);
+                    }
+                    .info-box .ib-label {
+                        font-size: 0.8rem;
+                        color: rgba(255,255,255,0.65);
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-top: 0.3rem;
+                    }
+                    @media (max-width: 768px) {
+                        .target-grid, .outcome-grid, .module-grid { grid-template-columns: 1fr; }
+                        .info-row { grid-template-columns: repeat(2, 1fr); }
+                        .corp-hero-content h3 { font-size: 1.4rem; }
+                    }
+                </style>
+
+                <!-- Hero Banner -->
+                <div class="corp-hero">
+                    <img class="corp-hero-img" src="assets/bridge_hero.png" alt="Revit Bridge Road BIM Training">
+                    <div class="corp-hero-overlay"></div>
+                    <div class="corp-hero-content">
+                        <div class="corp-badge" data-i18n="corp.badge">🏗️ Đào tạo Doanh nghiệp</div>
+                        <h3 data-i18n="corp.title">ĐÀO TẠO REVIT CẦU ĐƯỜNG<br>CHO DOANH NGHIỆP</h3>
+                        <p data-i18n="corp.subtitle">Chương trình đào tạo chuyên sâu được thiết kế riêng cho đội ngũ kỹ sư tư vấn thiết kế, triển khai mô hình BIM cầu đường với Revit và tự động hóa bằng Dynamo tại doanh nghiệp của bạn.</p>
+                    </div>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="info-row">
+                    <div class="info-box">
+                        <div class="ib-num">16+</div>
+                        <div class="ib-label" data-i18n="corp.s1">Bài học</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="ib-num">40+</div>
+                        <div class="ib-label" data-i18n="corp.s2">Giờ học thực hành</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="ib-num">100%</div>
+                        <div class="ib-label" data-i18n="corp.s3">Thực chiến theo dự án</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="ib-num">∞</div>
+                        <div class="ib-label" data-i18n="corp.s4">Hỗ trợ sau khoá học</div>
+                    </div>
+                </div>
+
+                <!-- Target Audience -->
+                <div class="corp-section">
+                    <div class="corp-section-title">🎯 <span data-i18n="corp.target_title">Đối tượng tham gia</span></div>
+                    <div class="target-grid">
+                        <div class="target-card">
+                            <div class="tc-icon">👷</div>
+                            <div class="tc-title" data-i18n="corp.t1">Kỹ sư xây dựng cầu đường</div>
+                        </div>
+                        <div class="target-card">
+                            <div class="tc-icon">📐</div>
+                            <div class="tc-title" data-i18n="corp.t2">Kỹ sư thiết kế hạ tầng giao thông</div>
+                        </div>
+                        <div class="target-card">
+                            <div class="tc-icon">🏗️</div>
+                            <div class="tc-title" data-i18n="corp.t3">Đội ngũ BIM tại công ty tư vấn</div>
+                        </div>
+                        <div class="target-card">
+                            <div class="tc-icon">💼</div>
+                            <div class="tc-title" data-i18n="corp.t4">Quản lý dự án cần hiểu về BIM</div>
+                        </div>
+                        <div class="target-card">
+                            <div class="tc-icon">🎓</div>
+                            <div class="tc-title" data-i18n="corp.t5">Kỹ sư mới tốt nghiệp muốn tiếp cận BIM</div>
+                        </div>
+                        <div class="target-card">
+                            <div class="tc-icon">🔧</div>
+                            <div class="tc-title" data-i18n="corp.t6">Kỹ sư đang dùng CAD muốn chuyển sang BIM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Outcomes -->
+                <div class="corp-section">
+                    <div class="corp-section-title green">✅ <span data-i18n="corp.outcome_title">Kết quả sau khoá học</span></div>
+                    <div class="outcome-grid">
+                        <div class="outcome-item"><span class="oi-icon">🏗️</span><span data-i18n="corp.o1">Xây dựng đầy đủ các Family cầu đường tiêu chuẩn: Cọc khoan nhồi, Trụ cầu, Mố cầu, Dầm Super T, Cáp DUL</span></div>
+                        <div class="outcome-item"><span class="oi-icon">⚡</span><span data-i18n="corp.o2">Tự động hóa đặt cấu kiện bằng Dynamo: đọc tim tuyến Civil 3D, đặt mố trụ, dầm, gối cầu theo tung độ tim</span></div>
+                        <div class="outcome-item"><span class="oi-icon">🔩</span><span data-i18n="corp.o3">Bố trí cốt thép đầy đủ, tạo bản vẽ thi công: khung tên, DIM, TAG thép, bảng khối lượng thép</span></div>
+                        <div class="outcome-item"><span class="oi-icon">📐</span><span data-i18n="corp.o4">Quản lý đối tượng, đường nét, in ấn đúng chuẩn; xuất khối lượng sang Excel; phối hợp với file CAD & Civil 3D</span></div>
+                        <div class="outcome-item"><span class="oi-icon">🌐</span><span data-i18n="corp.o5">Xây dựng quy trình BIM chuẩn hóa cho đội nhóm, áp dụng trực tiếp vào dự án thực tế của doanh nghiệp</span></div>
+                        <div class="outcome-item"><span class="oi-icon">🚀</span><span data-i18n="corp.o6">Tăng năng suất thiết kế 3-5 lần so với quy trình CAD truyền thống; giảm thiểu lỗi xung đột và rủi ro thi công</span></div>
+                    </div>
+                </div>
+
+                <!-- Module Details with images -->
+                <div class="corp-section">
+                    <div class="corp-section-title">📚 <span data-i18n="corp.module_title">Nội dung chương trình</span></div>
+                    <div class="module-grid">
+                        <!-- Module 1 -->
+                        <div class="module-card">
+                            <img class="module-img" src="assets/revit_families.png" alt="Revit Bridge Families">
+                            <div class="module-body">
+                                <div class="module-num" data-i18n="corp.m1_num">Phần 01 — Family Modeling</div>
+                                <div class="module-title" data-i18n="corp.m1_title">Xây dựng Family cầu đường trong Revit</div>
+                                <ul class="module-list">
+                                    <li data-i18n="corp.m1_l1">Family cọc khoan nhồi (parametric theo đường kính, chiều dài)</li>
+                                    <li data-i18n="corp.m1_l2">Family trụ cầu định hình (trụ thẳng, trụ cong)</li>
+                                    <li data-i18n="corp.m1_l3">Family mố cầu, mố vùi chân taluy</li>
+                                    <li data-i18n="corp.m1_l4">Family dầm Super T / dầm I tiêu chuẩn 22TCN</li>
+                                    <li data-i18n="corp.m1_l5">Family cáp dự ứng lực (DUL) trong dầm</li>
+                                    <li data-i18n="corp.m1_l6">Family gối cầu cao su / chậu / pot bearing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2 -->
+                        <div class="module-card">
+                            <img class="module-img" src="assets/dynamo_nodes.png" alt="Dynamo Automation">
+                            <div class="module-body">
+                                <div class="module-num" data-i18n="corp.m2_num">Phần 02 — Dynamo Automation</div>
+                                <div class="module-title" data-i18n="corp.m2_title">Tự động hóa đặt cấu kiện bằng Dynamo</div>
+                                <ul class="module-list">
+                                    <li data-i18n="corp.m2_l1">Làm quen Dynamo: node, wire, list, logic cơ bản</li>
+                                    <li data-i18n="corp.m2_l2">Đọc tọa độ tim tuyến từ file Civil 3D (.dwg / .xml)</li>
+                                    <li data-i18n="corp.m2_l3">Đặt cọc khoan nhồi hàng loạt theo bảng tọa độ</li>
+                                    <li data-i18n="corp.m2_l4">Đặt mố trụ cầu dọc theo tim tuyến với đúng góc nghiêng</li>
+                                    <li data-i18n="corp.m2_l5">Đặt gối cầu, dầm cầu, bản mặt cầu tự động</li>
+                                    <li data-i18n="corp.m2_l6">Script Dynamo tùy chỉnh theo tiêu chuẩn doanh nghiệp</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 3 -->
+                        <div class="module-card">
+                            <img class="module-img" src="assets/bridge_rebar.png" alt="Bridge Reinforcement">
+                            <div class="module-body">
+                                <div class="module-num" data-i18n="corp.m3_num">Phần 03 — Reinforcement & Drawings</div>
+                                <div class="module-title" data-i18n="corp.m3_title">Bố trí cốt thép & Hoàn thiện bản vẽ</div>
+                                <ul class="module-list">
+                                    <li data-i18n="corp.m3_l1">Bố trí cốt thép trong trụ, mố, bản mặt cầu bằng công cụ Revit</li>
+                                    <li data-i18n="corp.m3_l2">Tạo khung tên bản vẽ chuẩn ISO, thiết lập sheet</li>
+                                    <li data-i18n="corp.m3_l3">Tạo DIM, TAG cốt thép, chú thích tự động</li>
+                                    <li data-i18n="corp.m3_l4">Xuất bảng khối lượng thép (Schedule → Excel)</li>
+                                    <li data-i18n="corp.m3_l5">In ấn, xuất PDF/DWG, quản lý đường nét đúng chuẩn</li>
+                                    <li data-i18n="corp.m3_l6">Phối hợp file CAD / Civil 3D - đúng tọa độ hệ thống</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 4 – What you get -->
+                        <div class="module-card">
+                            <div style="height:200px; background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); display:flex; align-items:center; justify-content:center; font-size:5rem;">🏆</div>
+                            <div class="module-body">
+                                <div class="module-num" data-i18n="corp.m4_num">Phần 04 — Deliverables</div>
+                                <div class="module-title" data-i18n="corp.m4_title">Bộ tài liệu & Quy trình chuẩn bàn giao</div>
+                                <ul class="module-list">
+                                    <li data-i18n="corp.m4_l1">Bộ Family Library cầu đường chuẩn hóa cho doanh nghiệp</li>
+                                    <li data-i18n="corp.m4_l2">Bộ Script Dynamo bố trí cấu kiện tự động (tái sử dụng)</li>
+                                    <li data-i18n="corp.m4_l3">Template Revit chuẩn hóa (BIM Execution Plan tích hợp)</li>
+                                    <li data-i18n="corp.m4_l4">Tài liệu hướng dẫn sử dụng (SOP) nội bộ</li>
+                                    <li data-i18n="corp.m4_l5">Hỗ trợ kỹ thuật 1-1 sau khi kết thúc khoá học</li>
+                                    <li data-i18n="corp.m4_l6">Chứng nhận hoàn thành khoá học BIM Cầu đường</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align:center; padding: 2.5rem; background: linear-gradient(135deg, #1a1a2e, #0f3460); border-radius: 16px; color: white;">
+                    <p style="font-family: var(--font-display); font-size:1.4rem; font-weight:800; color:white; margin-bottom:0.5rem;" data-i18n="corp.cta_title">Đăng ký tư vấn chương trình đào tạo cho doanh nghiệp</p>
+                    <p style="color:rgba(255,255,255,0.7); margin-bottom:1.5rem;" data-i18n="corp.cta_desc">Chúng tôi sẽ thiết kế chương trình học phù hợp với quy trình và dự án thực tế của đội nhóm bạn</p>
+                    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                        <a href="tel:+84399762377" class="btn btn-primary" data-i18n="corp.cta_call">📞 Gọi ngay</a>
+                        <a href="mailto:hoangquoctuan1395@gmail.com" class="btn btn-secondary" data-i18n="corp.cta_email">✉️ Gửi Email</a>
+                    </div>
                 </div>
             </div>
+
+
 
             <div class="tab-content" id="tab-model">
                 <div class="service-card" style="border-bottom-color: var(--primary-red);">
