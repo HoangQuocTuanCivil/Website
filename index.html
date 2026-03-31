@@ -25,7 +25,7 @@
             position: relative;
             gap: clamp(1.5rem, 4vw, 4rem);
             align-items: center;
-            grid-template-columns: 1.05fr 1.25fr;
+            grid-template-columns: 0.95fr 1.55fr;
         }
         .hero-title {
             font-size: clamp(2.2rem, 4vw, 3.6rem);
@@ -39,9 +39,9 @@
 
         /* ---- hero-visual = slideshow ---- */
         .hero-visual {
-            height: 480px;
+            height: 560px;
             width: 100%;
-            max-width: 780px;
+            max-width: 980px;
             margin-left: auto;
             border-radius: 14px;
             overflow: hidden;
@@ -50,6 +50,37 @@
             display: block;
             transform: none;
         }
+        .hero-visual .slide { z-index: 1; }
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0,157,1,0.22), transparent 55%),
+                radial-gradient(circle at 85% 75%, rgba(237,28,36,0.20), transparent 60%),
+                linear-gradient(120deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+            mix-blend-mode: overlay;
+            opacity: 0.9;
+            animation: heroGlow 9s ease-in-out infinite;
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            background:
+                repeating-linear-gradient(
+                    180deg,
+                    rgba(255,255,255,0.00) 0px,
+                    rgba(255,255,255,0.00) 6px,
+                    rgba(255,255,255,0.045) 7px
+                );
+            opacity: 0.35;
+            animation: heroScan 6s linear infinite;
+        }
 
         /* ---- Orbit ---- */
         .hero-content { position: relative; z-index: 1; }
@@ -57,30 +88,39 @@
         .orbit-system {
             position: absolute;
             top: 50%;
-            left: 52%;
-            transform: translate(-50%, -50%) scale(1.05);
-            z-index: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.12);
+            z-index: 4;
             pointer-events: none;
-            width: 420px;
-            height: 420px;
+            width: min(560px, 95%);
+            height: min(560px, 95%);
+            filter: drop-shadow(0 14px 28px rgba(0,0,0,0.25));
         }
 
         @media (max-width: 992px) {
             .hero-container { grid-template-columns: 1fr 1fr; }
-            .hero-visual { height: 420px; }
+            .hero-visual { height: 480px; max-width: 860px; }
             .orbit-system {
-                left: 56%;
-                transform: translate(-50%, -50%) scale(0.9);
-                width: 360px;
-                height: 360px;
+                transform: translate(-50%, -50%) scale(1.0);
+                width: min(500px, 95%);
+                height: min(500px, 95%);
             }
         }
 
         @media (max-width: 768px) {
             .hero { min-height: auto; padding-bottom: 2rem; }
             .hero-container { grid-template-columns: 1fr; }
-            .hero-visual { height: 320px; max-width: 100%; margin-left: 0; }
+            .hero-visual { height: 360px; max-width: 100%; margin-left: 0; }
             .orbit-system { display: none; }
+        }
+        @keyframes heroGlow {
+            0%   { opacity: 0.75; transform: translate3d(0,0,0) scale(1); }
+            50%  { opacity: 1; transform: translate3d(0,0,0) scale(1.01); }
+            100% { opacity: 0.75; transform: translate3d(0,0,0) scale(1); }
+        }
+        @keyframes heroScan {
+            0% { transform: translateY(-18px); }
+            100% { transform: translateY(18px); }
         }
 
         /* ---- CTA ---- */
@@ -140,32 +180,40 @@
                 </div>
             </div>
 
-            <!-- Orbit: right side, next to slideshow -->
-            <div class="orbit-system">
-                <div class="core"></div>
-                <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
-                <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
-                <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
-                <!-- Floating tech particles -->
-                <div class="tech-particle tp-1">BIM</div>
-                <div class="tech-particle tp-2">AI</div>
-                <div class="tech-particle tp-3">IoT</div>
-                <div class="tech-particle tp-4">3D</div>
-                <div class="tech-particle tp-5">DT</div>
-                <div class="tech-hex hex-1"></div>
-                <div class="tech-hex hex-2"></div>
-                <div class="tech-ring ring-1"></div>
-                <div class="tech-ring ring-2"></div>
-                <div class="tech-dot dot-1"></div>
-                <div class="tech-dot dot-2"></div>
-                <div class="tech-dot dot-3"></div>
-                <div class="tech-dot dot-4"></div>
-                <div class="tech-dot dot-5"></div>
-                <div class="tech-dot dot-6"></div>
-            </div>
-
             <!-- RIGHT: Slideshow fills hero-visual -->
             <div class="hero-visual">
+                <div class="orbit-system">
+                    <div class="core"></div>
+                    <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
+                    <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
+                    <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
+                    <div class="tech-particle tp-1">BIM</div>
+                    <div class="tech-particle tp-2">AI</div>
+                    <div class="tech-particle tp-3">IoT</div>
+                    <div class="tech-particle tp-4">3D</div>
+                    <div class="tech-particle tp-5">DT</div>
+                    <div class="tech-particle tp-6">VR</div>
+                    <div class="tech-particle tp-7">AR</div>
+                    <div class="tech-particle tp-8">CDE</div>
+                    <div class="tech-particle tp-9">API</div>
+                    <div class="tech-hex hex-1"></div>
+                    <div class="tech-hex hex-2"></div>
+                    <div class="tech-hex hex-3"></div>
+                    <div class="tech-hex hex-4"></div>
+                    <div class="tech-ring ring-1"></div>
+                    <div class="tech-ring ring-2"></div>
+                    <div class="tech-ring ring-3"></div>
+                    <div class="tech-dot dot-1"></div>
+                    <div class="tech-dot dot-2"></div>
+                    <div class="tech-dot dot-3"></div>
+                    <div class="tech-dot dot-4"></div>
+                    <div class="tech-dot dot-5"></div>
+                    <div class="tech-dot dot-6"></div>
+                    <div class="tech-dot dot-7"></div>
+                    <div class="tech-dot dot-8"></div>
+                    <div class="tech-dot dot-9"></div>
+                    <div class="tech-dot dot-10"></div>
+                </div>
                 <div class="slide" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;"><img src="assets/corp1.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp2.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp3.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
