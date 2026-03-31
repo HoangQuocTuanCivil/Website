@@ -8,7 +8,8 @@
       "Bash(where python3:*)",
       "Bash(python -c \"from PIL import Image; print\\(''Pillow OK''\\)\")",
       "Bash(pip install:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(gh api:*)"
     ]
   }
 }
