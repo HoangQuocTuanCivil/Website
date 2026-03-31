@@ -66,12 +66,284 @@
 
             <!-- Tab Contents -->
             <div class="tab-content active" id="tab-online">
-                <div class="service-card" style="border-bottom-color: var(--primary-red);">
-                    <div class="service-icon red-icon">🎓</div>
-                    <h3 class="service-title" data-i18n="services.card1.title">Đào tạo BIM Online</h3>
-                    <p class="service-desc" data-i18n="services.card1.desc">Khóa học trực tuyến linh hoạt, trang bị kỹ năng thực chiến với các phần mềm hàng đầu trong ngành.</p>
+                <style>
+                    .course-header {
+                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+                        border-radius: 16px;
+                        padding: 2.5rem 3rem;
+                        color: white;
+                        margin-bottom: 2.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .course-header::before {
+                        content: '';
+                        position: absolute;
+                        top: -30%; right: -10%;
+                        width: 300px; height: 300px;
+                        border-radius: 50%;
+                        background: radial-gradient(circle, rgba(237,28,36,0.2) 0%, transparent 70%);
+                    }
+                    .course-icon-big { font-size: 4rem; flex-shrink: 0; }
+                    .course-header-text h3 {
+                        font-family: var(--font-display);
+                        font-size: 1.6rem;
+                        font-weight: 800;
+                        color: white;
+                        line-height: 1.2;
+                        margin-bottom: 0.5rem;
+                    }
+                    .course-meta {
+                        display: flex;
+                        gap: 1.5rem;
+                        flex-wrap: wrap;
+                        margin-top: 1rem;
+                    }
+                    .course-meta-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        font-size: 0.9rem;
+                        color: rgba(255,255,255,0.8);
+                    }
+                    .course-lessons {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1rem;
+                    }
+                    .lesson-card {
+                        background: white;
+                        border-radius: 10px;
+                        padding: 1.2rem 1.5rem;
+                        box-shadow: var(--shadow-sm);
+                        border-left: 4px solid var(--primary-red);
+                        transition: var(--transition);
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                    }
+                    .lesson-card:nth-child(even) { border-left-color: var(--primary-green); }
+                    .lesson-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+                    .lesson-num {
+                        font-family: var(--font-display);
+                        font-size: 1.5rem;
+                        font-weight: 900;
+                        color: var(--primary-red);
+                        line-height: 1;
+                        min-width: 40px;
+                    }
+                    .lesson-card:nth-child(even) .lesson-num { color: var(--primary-green); }
+                    .lesson-body { flex: 1; }
+                    .lesson-title {
+                        font-weight: 700;
+                        font-size: 0.95rem;
+                        margin-bottom: 0.4rem;
+                        color: var(--text-color);
+                    }
+                    .lesson-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+                    .lesson-tag {
+                        font-size: 0.75rem;
+                        padding: 2px 10px;
+                        border-radius: 20px;
+                        font-weight: 600;
+                    }
+                    .tag-video { background: #fff0f0; color: var(--primary-red); }
+                    .tag-file { background: #f0fff0; color: var(--primary-green); }
+                    @media (max-width: 768px) {
+                        .course-header { flex-direction: column; text-align: center; }
+                        .course-meta { justify-content: center; }
+                        .course-lessons { grid-template-columns: 1fr; }
+                    }
+                </style>
+
+                <!-- Course Header -->
+                <div class="course-header">
+                    <div class="course-icon-big">🏗️</div>
+                    <div class="course-header-text">
+                        <h3 data-i18n="crs.title">REVIT CẦU ĐƯỜNG ONLINE</h3>
+                        <p style="color:rgba(255,255,255,0.7); font-size:0.95rem;" data-i18n="crs.subtitle">Chương trình đào tạo thực chiến từ cơ bản đến nâng cao về mô hình hóa cầu đường với Revit & Dynamo</p>
+                        <div class="course-meta">
+                            <div class="course-meta-item">📚 <span data-i18n="crs.lessons">16 Bài học</span></div>
+                            <div class="course-meta-item">🎬 <span data-i18n="crs.format">Video + File thực hành</span></div>
+                            <div class="course-meta-item">🌐 <span data-i18n="crs.mode">Online</span></div>
+                            <div class="course-meta-item">🏆 <span>Revit + Dynamo + Civil 3D</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lessons Grid -->
+                <div class="course-lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-num">01</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l1">Giới thiệu phần mềm, Xây dựng family cọc khoan nhồi</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 File thực hành</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">02</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l2">Xây dựng định hình family trụ cầu</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 File thực hành</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">03</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l3">Xây dựng định hình family mố cầu</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 File thực hành</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">04</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l4">Xây dựng định hình family dầm Super T</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 File thực hành</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">05</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l5">Xây dựng định hình cáp DUL (Dự ứng lực)</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 File thực hành</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">06</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l6">Làm quen với Dynamo, Đặt cọc khoan nhồi bằng Dynamo</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 File thực hành</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">07</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l7">Đọc dữ liệu tim tuyến từ Civil 3D, Đặt mố trụ cầu bằng Dynamo</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">08</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l8">Đặt gối cầu bằng Dynamo</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">09</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l9">Đặt dầm cầu và bản mặt cầu bằng Dynamo</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">10</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l10">Bố trí cốt thép bằng công cụ Revit (Phần 1)</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">11</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l11">Bố trí cốt thép bằng công cụ Revit (Phần 2)</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">12</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l12">Tạo khung tên bản vẽ, DIM, TAG thép, KL thép</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">13</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l13">Quản lý đối tượng, đường nét, in ấn, Export trong Revit</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">14</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l14">Vẽ family hố ga</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">15</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l15">Đưa đúng tọa độ khi chèn file CAD vào Revit</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                                <span class="lesson-tag tag-file">📄 Bài viết</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-num">16</div>
+                        <div class="lesson-body">
+                            <div class="lesson-title" data-i18n="crs.l16">Triển khai cốt thép, trình bày bản vẽ, xuất khối lượng</div>
+                            <div class="lesson-tags">
+                                <span class="lesson-tag tag-video">🎬 Video</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align:center; margin-top:2.5rem; padding: 2rem; background: linear-gradient(135deg, rgba(237,28,36,0.05), rgba(0,157,1,0.05)); border-radius: 12px; border: 1px dashed var(--border-color);">
+                    <p style="font-size:1.1rem; font-weight:600; margin-bottom:1rem;" data-i18n="crs.cta_text">Đăng ký ngay để nhận tư vấn chương trình học phù hợp!</p>
+                    <a href="tel:+84399762377" class="btn btn-primary" data-i18n="crs.cta_btn">Liên hệ tư vấn</a>
                 </div>
             </div>
+
 
             <div class="tab-content" id="tab-corp">
                 <div class="service-card" style="border-bottom-color: var(--primary-green);">
