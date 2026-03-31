@@ -58,5 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hash && document.getElementById(hash)) {
             activateTab(hash);
         }
+
+        // Handle hash change (e.g. clicking footer links from same page)
+        window.addEventListener('hashchange', () => {
+            const newHash = window.location.hash.replace('#', '');
+            if (newHash && document.getElementById(newHash)) {
+                activateTab(newHash);
+            }
+        });
     }
 });

@@ -12,7 +12,8 @@
       "Bash(gh api:*)",
       "WebFetch(domain:www.pinterest.com)",
       "Bash(\"d:/004. API/Website/CNAME\")",
-      "Bash(\"/d/004. API/hoangquoctuan.com/CNAME\")"
+      "Bash(\"/d/004. API/hoangquoctuan.com/CNAME\")",
+      "Bash(python -c \":*)"
     ]
   }
 }
