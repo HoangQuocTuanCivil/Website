@@ -51,13 +51,13 @@
             padding: 6px;
             background: linear-gradient(135deg, var(--primary-red), var(--primary-green));
             box-shadow: 0 0 40px rgba(237,28,36,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 5rem;
-            font-weight: 900;
-            color: white;
+            overflow: hidden;
+        }
+        .avatar-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
         .avatar-name {
             font-family: var(--font-display);
@@ -283,8 +283,8 @@
             text-align: center;
         }
         .zalo-qr-img {
-            width: 180px;
-            height: 180px;
+            width: 140px;
+            height: 140px;
             object-fit: contain;
             border-radius: 12px;
             background: white;
@@ -298,6 +298,8 @@
             .skills-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .about-hero-content h1 { font-size: 1.8rem; }
+            .section-padding > .container > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+            .section-padding > .container > div[style*="grid-template-columns: 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -342,9 +344,9 @@
         <div class="container about-hero-grid">
             <!-- Avatar -->
             <div class="avatar-wrapper">
-                <div class="avatar-ring">HT</div>
+                <div class="avatar-ring"><img src="Lir/anh dai dien.jpg" alt="Hoàng Quốc Tuấn"></div>
                 <div class="avatar-name">HOÀNG QUỐC TUẤN</div>
-                <div class="avatar-title">MSc. | CTO | BIM Expert</div>
+                <div class="avatar-title">KS. | CTO | BIM Expert</div>
             </div>
 
             <!-- Intro -->
@@ -352,15 +354,15 @@
                 <div class="hero-badge">⚡ Chief Technology Officer</div>
                 <h1>Kiến tạo tương lai <br>với <span class="red">BIM</span> & <span class="green">Digital Twin</span></h1>
                 <p class="about-hero-desc">
-                    Hơn 10 năm kinh nghiệm trong lĩnh vực kỹ thuật xây dựng và công nghệ thông tin.
+                    Hơn 8 năm kinh nghiệm trong lĩnh vực kỹ thuật xây dựng công trình giao thông và công nghệ thông tin.
                     Tôi là người tiên phong ứng dụng BIM, Digital Twin và tự động hóa quy trình vào
                     các dự án hạ tầng giao thông quy mô lớn tại Việt Nam.
                     Hiện đang giữ vị trí <strong style="color:var(--primary-green)">Phó Tổng Giám đốc phụ trách Công nghệ (CTO)</strong>
-                    tại Công ty Cổ phần Tư vấn Xây dựng A2Z.
+                    tại Công ty Cổ phần Tư vấn Xây dựng A2Z và đồng thời là <strong style="color:var(--primary-red)">Người sáng lập Công ty Cổ phần Xây dựng AEVN BIM</strong>.
                 </p>
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <div class="hero-stat-num">10+</div>
+                        <div class="hero-stat-num">8+</div>
                         <div class="hero-stat-label">Năm kinh nghiệm</div>
                     </div>
                     <div class="hero-stat">
@@ -376,53 +378,93 @@
         </div>
     </section>
 
-    <!-- ==================== KINH NGHIỆM ==================== -->
+    <!-- ==================== HÀNH TRÌNH SỰ NGHIỆP ==================== -->
     <section class="section-padding">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
-
-            <!-- Timeline Kinh nghiệm -->
-            <div>
-                <p class="section-label">Career Path</p>
-                <h2 class="section-heading">Hành trình <span class="highlight-red">Sự nghiệp</span></h2>
+        <div class="container">
+            <p class="section-label" style="text-align:center;">Career Path</p>
+            <h2 class="section-heading" style="text-align:center;">Hành trình <span class="highlight-red">Sự nghiệp</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <!-- Cột trái -->
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">01/2024 — Hiện tại</div>
-                        <div class="timeline-role">Phó Tổng Giám đốc (CTO)</div>
+                    <div class="timeline-item" style="border-left: 3px solid var(--primary-red); padding-left: 2rem;">
+                        <div class="timeline-date" style="font-size:0.95rem;">Hiện tại</div>
+                        <div class="timeline-role" style="font-size:1.15rem;">Phó Tổng Giám đốc phụ trách Công nghệ (CTO)</div>
                         <div class="timeline-company">🏢 Công ty CP Tư vấn Xây dựng A2Z</div>
-                        <div class="timeline-desc">Phụ trách chiến lược công nghệ, chuyển đổi số và triển khai BIM toàn diện. Lãnh đạo đội ngũ kỹ thuật số cho các dự án hạ tầng giao thông trọng điểm quốc gia.</div>
+                        <div class="timeline-desc">Phụ trách chiến lược công nghệ, chuyển đổi số và triển khai BIM toàn diện cho các dự án hạ tầng giao thông trọng điểm quốc gia.</div>
                     </div>
                     <div class="timeline-item green">
-                        <div class="timeline-date">Trước 2024</div>
-                        <div class="timeline-role">Giám đốc Chi nhánh TP.HCM</div>
-                        <div class="timeline-company">🏗️ Công ty Thiết kế Xây dựng Đại Phong</div>
-                        <div class="timeline-desc">Quản lý và điều hành chi nhánh, triển khai các dự án thiết kế xây dựng lớn tại phía Nam, ứng dụng BIM vào quy trình thiết kế.</div>
+                        <div class="timeline-date">02/2025 — Nay</div>
+                        <div class="timeline-role">GĐ Chi nhánh kiêm Trưởng phòng BIM & CNS</div>
+                        <div class="timeline-company">🏗️ CT CP Tư vấn Thiết kế Xây dựng A2Z (Thành viên Đèo Cả)</div>
+                        <div class="timeline-desc">Quản lý chi nhánh, lãnh đạo phòng BIM và Công nghệ số cho các dự án hạ tầng lớn.</div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">Giai đoạn trước</div>
-                        <div class="timeline-role">Giảng viên Đại học</div>
-                        <div class="timeline-company">🎓 Đại học Đông Á - Đà Nẵng</div>
-                        <div class="timeline-desc">Giảng dạy các môn: Tin học nâng cao, Lập trình Java, Kỹ thuật phần mềm. Chuyển giao công nghệ và nghiên cứu ứng dụng CNTT trong xây dựng.</div>
+                        <div class="timeline-date">10/2024 — 02/2025</div>
+                        <div class="timeline-role">Giám đốc Chi nhánh</div>
+                        <div class="timeline-company">🏗️ CT CP Tư vấn Thiết kế Xây dựng Đại Phong (Thành viên Đèo Cả)</div>
+                        <div class="timeline-desc">Điều hành chi nhánh, triển khai dự án thiết kế xây dựng lớn tại phía Nam.</div>
+                    </div>
+                    <div class="timeline-item green">
+                        <div class="timeline-date">05/2024 — 10/2024</div>
+                        <div class="timeline-role">Phó Giám đốc Trung tâm BIM</div>
+                        <div class="timeline-company">🏢 Công ty CP Tập đoàn Đèo Cả</div>
+                        <div class="timeline-desc">Phụ trách triển khai BIM cấp tập đoàn, xây dựng quy trình và tiêu chuẩn BIM cho các dự án cao tốc.</div>
+                    </div>
+                </div>
+                <!-- Cột phải -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">01/2024 — 04/2024</div>
+                        <div class="timeline-role">Leader BIM</div>
+                        <div class="timeline-company">🏢 Công ty CP Tập đoàn Đèo Cả</div>
+                        <div class="timeline-desc">Dẫn dắt đội ngũ BIM, triển khai mô hình hóa cho các dự án hạ tầng giao thông.</div>
+                    </div>
+                    <div class="timeline-item green">
+                        <div class="timeline-date">05/2023 — 12/2023</div>
+                        <div class="timeline-role">BIM Manager</div>
+                        <div class="timeline-company">🌏 Kuukan Design Architects Việt Nam (Thành viên Space Design)</div>
+                        <div class="timeline-desc">Quản lý BIM cho các dự án kiến trúc quốc tế, phối hợp với đối tác Nhật Bản.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 — 2023</div>
+                        <div class="timeline-role">BIM Leader & Giảng viên Đào tạo BIM</div>
+                        <div class="timeline-company">🎓 BIM Hà Nội</div>
+                        <div class="timeline-desc">Đào tạo BIM chuyên sâu, xây dựng chương trình giảng dạy và phát triển đội ngũ BIM chuyên nghiệp.</div>
+                    </div>
+                    <div class="timeline-item green">
+                        <div class="timeline-date">2018 — 2022</div>
+                        <div class="timeline-role">BIM Leader</div>
+                        <div class="timeline-company">🏗️ CICCO Đà Nẵng</div>
+                        <div class="timeline-desc">Tiên phong ứng dụng BIM vào các dự án xây dựng tại miền Trung, xây dựng nền tảng BIM từ giai đoạn đầu.</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Timeline Học vấn -->
-            <div>
-                <p class="section-label">Education</p>
-                <h2 class="section-heading">Nền tảng <span class="highlight-green">Học vấn</span></h2>
+    <!-- ==================== HỌC VẤN ==================== -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <p class="section-label" style="text-align:center;">Education</p>
+            <h2 class="section-heading" style="text-align:center;">Nền tảng <span class="highlight-green">Học vấn</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
                 <div class="timeline">
                     <div class="timeline-item green">
-                        <div class="timeline-date">Thạc sĩ (Master)</div>
+                        <div class="timeline-date">Kỹ sư (Engineer)</div>
                         <div class="timeline-role">Chuyên ngành Kỹ thuật & Công nghệ</div>
                         <div class="timeline-company">🎓 Đại học Bách khoa Đà Nẵng (DUT)</div>
-                        <div class="timeline-desc">Tốt nghiệp Thạc sĩ tại một trong những trường kỹ thuật hàng đầu miền Trung Việt Nam. Chuyên sâu về ứng dụng công nghệ trong ngành xây dựng.</div>
+                        <div class="timeline-desc">Tốt nghiệp Kỹ sư tại một trong những trường kỹ thuật hàng đầu miền Trung Việt Nam. Chuyên sâu về ứng dụng công nghệ trong ngành xây dựng.</div>
                     </div>
+                </div>
+                <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">Chứng chỉ Quốc tế</div>
                         <div class="timeline-role">BIM Professional Certification</div>
                         <div class="timeline-company">🏆 Autodesk & Đối tác Quốc tế</div>
                         <div class="timeline-desc">Chứng nhận chuyên gia BIM từ các tổ chức quốc tế. Thành thạo Revit, Civil 3D, Navisworks, BIM 360, Dynamo Scripting.</div>
                     </div>
+                </div>
+                <div class="timeline">
                     <div class="timeline-item green">
                         <div class="timeline-date">Hợp tác Quốc tế</div>
                         <div class="timeline-role">Biên bản ghi nhớ đầu tư & công nghệ</div>
@@ -435,7 +477,7 @@
     </section>
 
     <!-- ==================== KỸ NĂNG ==================== -->
-    <section class="section-padding bg-alt">
+    <section class="section-padding">
         <div class="container">
             <p class="section-label" style="text-align:center;">Chuyên môn</p>
             <h2 class="section-heading" style="text-align:center;">Kỹ năng & <span class="highlight-red">Công cụ</span></h2>
@@ -527,7 +569,7 @@
                     <div class="zalo-qr-wrapper">
                         <span class="contact-icon">💬</span>
                         <div class="contact-label">Zalo — Quét QR để kết nối</div>
-                        <img src="assets/ZaloQR.jpg" alt="Zalo QR Code - Hoàng Quốc Tuấn" class="zalo-qr-img">
+                        <img src="Lir/ZaloQR.jpg" alt="Zalo QR Code - Hoàng Quốc Tuấn" class="zalo-qr-img">
                     </div>
                 </div>
             </div>
