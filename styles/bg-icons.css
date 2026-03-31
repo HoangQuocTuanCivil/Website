@@ -1,0 +1,175 @@
+/* ============================================================
+   HUD-style floating tech icons — full-page background layer
+   ============================================================ */
+
+/* Fixed container behind all content */
+.bg-tech-icons {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Base class for every HUD element */
+.bg-hud {
+    position: absolute;
+    pointer-events: none;
+    opacity: var(--op, 0.08);
+    color: var(--hc, rgba(6,182,212,0.9));
+    filter: drop-shadow(0 0 6px currentColor);
+    will-change: transform;
+    animation:
+        hudFloat var(--dur, 22s) ease-in-out infinite,
+        hudPulse var(--dur2, 8s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s), var(--delay2, 0s);
+}
+
+/* Spinning variant for circular elements */
+.bg-hud--spin {
+    animation:
+        hudFloat var(--dur, 22s) ease-in-out infinite,
+        hudPulse var(--dur2, 8s) ease-in-out infinite,
+        hudSpin  var(--dur3, 40s) linear infinite;
+    animation-delay: var(--delay, 0s), var(--delay2, 0s), 0s;
+}
+
+/* ---- Individual positions, sizes, colors, timings ---- */
+
+/* 1. Radar ring — top-left */
+.bh-1 {
+    top: 6%; left: 4%; width: 60px; height: 60px;
+    --hc: rgba(6,182,212,0.9); --op: 0.09;
+    --dur: 24s; --dur2: 7s; --dur3: 35s; --delay: 0s; --delay2: -2s;
+    --dx1: 15px; --dy1: 20px; --dx2: -10px; --dy2: -15px; --dx3: 8px; --dy3: 12px;
+}
+
+/* 2. Bracket panel — top-center-right */
+.bh-2 {
+    top: 12%; right: 15%; width: 70px; height: 45px;
+    --hc: rgba(99,102,241,0.9); --op: 0.07;
+    --dur: 26s; --dur2: 9s; --delay: -3s; --delay2: -1s;
+    --dx1: -12px; --dy1: 18px; --dx2: 14px; --dy2: -8px; --dx3: -6px; --dy3: 10px;
+}
+
+/* 3. Waveform — left-center */
+.bh-3 {
+    top: 30%; left: 7%; width: 65px; height: 30px;
+    --hc: rgba(6,182,212,0.9); --op: 0.08;
+    --dur: 20s; --dur2: 10s; --delay: -5s; --delay2: -4s;
+    --dx1: 10px; --dy1: -12px; --dx2: -8px; --dy2: 16px; --dx3: 12px; --dy3: -6px;
+}
+
+/* 4. Target crosshair — right-center */
+.bh-4 {
+    top: 35%; right: 5%; width: 50px; height: 50px;
+    --hc: rgba(139,92,246,0.9); --op: 0.07;
+    --dur: 28s; --dur2: 8s; --dur3: 45s; --delay: -7s; --delay2: -3s;
+    --dx1: -18px; --dy1: 10px; --dx2: 12px; --dy2: -14px; --dx3: -8px; --dy3: 18px;
+}
+
+/* 5. Network nodes — center-left */
+.bh-5 {
+    top: 50%; left: 12%; width: 55px; height: 45px;
+    --hc: rgba(6,182,212,0.9); --op: 0.06;
+    --dur: 22s; --dur2: 11s; --delay: -2s; --delay2: -6s;
+    --dx1: 14px; --dy1: 8px; --dx2: -10px; --dy2: -12px; --dx3: 6px; --dy3: 14px;
+}
+
+/* 6. Circular gauge — center-right */
+.bh-6 {
+    top: 48%; right: 10%; width: 55px; height: 55px;
+    --hc: rgba(99,102,241,0.9); --op: 0.08;
+    --dur: 25s; --dur2: 7s; --dur3: 50s; --delay: -9s; --delay2: -2s;
+    --dx1: -10px; --dy1: -16px; --dx2: 18px; --dy2: 10px; --dx3: -14px; --dy3: -8px;
+}
+
+/* 7. Data grid / bar chart — bottom-left area */
+.bh-7 {
+    top: 65%; left: 5%; width: 50px; height: 35px;
+    --hc: rgba(6,182,212,0.9); --op: 0.07;
+    --dur: 21s; --dur2: 9s; --delay: -4s; --delay2: -5s;
+    --dx1: 8px; --dy1: 14px; --dx2: -12px; --dy2: -6px; --dx3: 10px; --dy3: -10px;
+}
+
+/* 8. Hexagon — bottom-right area */
+.bh-8 {
+    top: 68%; right: 8%; width: 48px; height: 48px;
+    --hc: rgba(139,92,246,0.9); --op: 0.06;
+    --dur: 27s; --dur2: 10s; --dur3: 55s; --delay: -6s; --delay2: -1s;
+    --dx1: -14px; --dy1: 12px; --dx2: 8px; --dy2: -18px; --dx3: -10px; --dy3: 6px;
+}
+
+/* 9. Circuit paths — lower-left */
+.bh-9 {
+    top: 80%; left: 15%; width: 55px; height: 40px;
+    --hc: rgba(6,182,212,0.9); --op: 0.07;
+    --dur: 23s; --dur2: 8s; --delay: -8s; --delay2: -3s;
+    --dx1: 12px; --dy1: -10px; --dx2: -6px; --dy2: 14px; --dx3: 8px; --dy3: -12px;
+}
+
+/* 10. Signal waves — lower-right */
+.bh-10 {
+    top: 82%; right: 12%; width: 45px; height: 40px;
+    --hc: rgba(99,102,241,0.9); --op: 0.06;
+    --dur: 19s; --dur2: 11s; --delay: -1s; --delay2: -7s;
+    --dx1: -10px; --dy1: 8px; --dx2: 14px; --dy2: -10px; --dx3: -8px; --dy3: 12px;
+}
+
+/* 11. Binary ring — mid-top */
+.bh-11 {
+    top: 18%; left: 40%; width: 42px; height: 42px;
+    --hc: rgba(6,182,212,0.9); --op: 0.05;
+    --dur: 30s; --dur2: 9s; --dur3: 60s; --delay: -10s; --delay2: -4s;
+    --dx1: 16px; --dy1: -8px; --dx2: -12px; --dy2: 14px; --dx3: 10px; --dy3: -16px;
+}
+
+/* 12. Gear outline — mid-bottom */
+.bh-12 {
+    top: 55%; left: 55%; width: 45px; height: 45px;
+    --hc: rgba(139,92,246,0.9); --op: 0.06;
+    --dur: 26s; --dur2: 10s; --dur3: 48s; --delay: -5s; --delay2: -8s;
+    --dx1: -8px; --dy1: 16px; --dx2: 14px; --dy2: -10px; --dx3: -12px; --dy3: 8px;
+}
+
+/* ---- Keyframes ---- */
+
+@keyframes hudFloat {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(var(--dx1, 10px), var(--dy1, 15px)) rotate(1.5deg); }
+    50%  { transform: translate(var(--dx2, -8px), var(--dy2, -10px)) rotate(-1deg); }
+    75%  { transform: translate(var(--dx3, 6px), var(--dy3, 8px)) rotate(0.8deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes hudPulse {
+    0%, 100% { opacity: var(--op, 0.08); }
+    50%      { opacity: calc(var(--op, 0.08) + 0.04); }
+}
+
+@keyframes hudSpin {
+    from { rotate: 0deg; }
+    to   { rotate: 360deg; }
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+    .bh-2, .bh-4, .bh-6, .bh-8, .bh-10, .bh-12 { display: none; }
+    .bg-hud { --op: 0.05; }
+}
+
+@media (max-width: 480px) {
+    .bh-5, .bh-7, .bh-9, .bh-11 { display: none; }
+    .bg-hud { --op: 0.04; }
+}
+
+/* ---- Accessibility ---- */
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-hud, .bg-hud--spin { animation: none; }
+}
+
+@media print {
+    .bg-tech-icons { display: none; }
+}
