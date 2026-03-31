@@ -459,6 +459,10 @@
   font-size: 0.9rem;
 }
 
+.footer-contact {
+  margin-bottom: 0.4rem;
+}
+
 .footer-links a:hover {
   color: var(--primary-green);
 }
