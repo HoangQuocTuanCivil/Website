@@ -114,12 +114,14 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--primary-red);
-  color: white;
+  background-color: transparent;
+  color: var(--primary-red);
+  border: 2px solid var(--primary-red);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-red-hover);
+  background-color: var(--primary-red);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(237, 28, 36, 0.3);
 }
