@@ -79,12 +79,14 @@
 }
 
 .lang-flag {
-  width: 20px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 2px;
   object-fit: cover;
   flex-shrink: 0;
   vertical-align: middle;
+  image-rendering: -webkit-optimize-contrast; /* Chrome/Safari */
+  image-rendering: crisp-edges;               /* Firefox */
 }
 
 .lang-options {
