@@ -12,31 +12,53 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
     <style>
-        /* Co gọn CTA */
-        .cta { padding: 2rem 0; }
-        .cta-title { font-size: 1.5rem; margin-bottom: 0.4rem; }
-        .cta-desc  { font-size: 0.85rem; margin-bottom: 1rem; }
-        /* Co gọn Footer */
-        .footer { padding-top: 1.5rem; }
-        .footer-grid { gap: 1.5rem; }
-        .footer-text { font-size: 0.8rem; line-height: 1.5; }
-        .footer-bottom { padding: 0.6rem 0; }
-        .footer-bottom p { font-size: 0.75rem; }
-        /* Hero visual = slideshow container */
-        .hero-visual {
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        /* ---- HERO: compact, auto height ---- */
+        .hero {
+            min-height: unset !important;
+            padding-top: 80px !important;
+            padding-bottom: 1.5rem !important;
         }
-        /* Orbit floats ON TOP of slideshow */
+        .hero-container { gap: 2rem !important; align-items: center; }
+        .hero-title { font-size: 3rem !important; margin-bottom: 1rem !important; }
+        .hero-subtitle { font-size: 1rem !important; margin-bottom: 1.5rem !important; }
+
+        /* ---- hero-visual = slideshow, fills height ---- */
+        .hero-visual {
+            height: 360px !important;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            position: relative !important;
+            display: block !important;
+        }
+
+        /* ---- Orbit: absolute inside hero-content (left text side) ---- */
+        .hero-content { position: relative; z-index: 1; }
         .orbit-system {
             position: absolute !important;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
+            top: 50% !important;
+            right: -100px !important;   /* sticks out right of text, overlaps into gap */
+            left: unset !important;
+            transform: translateY(-50%) !important;
+            z-index: 20 !important;
             pointer-events: none;
         }
+
+        /* ---- CTA: very compact ---- */
+        .cta { padding: 1.2rem 0 !important; }
+        .cta-title { font-size: 1.3rem !important; margin-bottom: 0.3rem !important; }
+        .cta-desc  { font-size: 0.8rem !important; margin-bottom: 0.8rem !important; }
+        .btn-lg    { padding: 0.6rem 1.6rem !important; font-size: 0.9rem !important; }
+
+        /* ---- Footer: compact ---- */
+        .footer { padding-top: 1.2rem !important; }
+        .footer-grid { gap: 1.2rem !important; padding-bottom: 0 !important; }
+        .footer-col h4 { margin-bottom: 0.5rem !important; font-size: 0.85rem !important; }
+        .footer-links li { margin-bottom: 0.3rem !important; }
+        .footer-links a, .footer-contact { font-size: 0.78rem !important; }
+        .footer-text { font-size: 0.78rem !important; line-height: 1.5 !important; }
+        .footer-bottom { padding: 0.5rem 0 !important; }
+        .footer-bottom p { font-size: 0.72rem !important; }
     </style>
 </head>
 <body>
@@ -78,6 +100,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-container">
+
+            <!-- LEFT: Text content + Orbit floating right edge -->
             <div class="hero-content">
                 <h1 class="hero-title" data-i18n="hero.title">ĐỔI MỚI: SÁNG TẠO, <br><span class="highlight-green">CÔNG NGHỆ</span></h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">Cung cấp giải pháp số hóa toàn diện và thiết kế đột phá cho tương lai.</p>
@@ -85,39 +109,38 @@
                     <a href="services.html" class="btn btn-primary" data-i18n="hero.cta_primary">Khám phá</a>
                     <a href="tel:+84399762377" class="btn btn-secondary" data-i18n="hero.cta_secondary">Liên hệ ngay</a>
                 </div>
+
+                <!-- Orbit: positioned at right edge of text block, floats in front of text -->
+                <div class="orbit-system">
+                    <div class="core"></div>
+                    <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
+                    <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
+                    <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
+                </div>
             </div>
 
-            <!-- Hero Visual = Slideshow background + Orbit overlay -->
+            <!-- RIGHT: Slideshow fills hero-visual -->
             <div class="hero-visual">
-                <!-- Slides -->
                 <div class="slide" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;"><img src="assets/corp1.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp2.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp3.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
                 <div class="slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;"><img src="assets/corp4.png" style="width:100%;height:100%;object-fit:cover;" alt="Đào tạo BIM"></div>
 
                 <!-- Caption bottom -->
-                <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,10,30,0.8) 0%,transparent 100%);padding:1rem 1rem 0.7rem;pointer-events:none;z-index:5;">
-                    <p style="color:white;font-family:var(--font-display);font-size:0.8rem;font-weight:700;margin:0;" data-i18n="slide.caption">Đào tạo BIM Revit Cầu Đường — Thực hành tại doanh nghiệp</p>
+                <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,10,30,0.8) 0%,transparent 100%);padding:0.8rem 1rem 0.6rem;pointer-events:none;z-index:5;">
+                    <p style="color:white;font-family:var(--font-display);font-size:0.75rem;font-weight:700;margin:0;" data-i18n="slide.caption">Đào tạo BIM Revit Cầu Đường — Thực hành tại doanh nghiệp</p>
                 </div>
 
-                <!-- Prev / Next -->
-                <button onclick="sliderMove(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);border:none;color:white;font-size:1.5rem;width:34px;height:34px;border-radius:50%;cursor:pointer;z-index:6;" onmouseover="this.style.background='rgba(255,255,255,0.4)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">&#8249;</button>
-                <button onclick="sliderMove(1)"  style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);border:none;color:white;font-size:1.5rem;width:34px;height:34px;border-radius:50%;cursor:pointer;z-index:6;" onmouseover="this.style.background='rgba(255,255,255,0.4)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">&#8250;</button>
+                <!-- Prev/Next -->
+                <button onclick="sliderMove(-1)" style="position:absolute;left:0.5rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);border:none;color:white;font-size:1.4rem;width:32px;height:32px;border-radius:50%;cursor:pointer;z-index:6;" onmouseover="this.style.background='rgba(255,255,255,0.4)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">&#8249;</button>
+                <button onclick="sliderMove(1)"  style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);border:none;color:white;font-size:1.4rem;width:32px;height:32px;border-radius:50%;cursor:pointer;z-index:6;" onmouseover="this.style.background='rgba(255,255,255,0.4)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">&#8250;</button>
 
                 <!-- Dots -->
-                <div style="position:absolute;bottom:0.45rem;left:50%;transform:translateX(-50%);display:flex;gap:0.4rem;z-index:6;">
+                <div style="position:absolute;bottom:0.4rem;left:50%;transform:translateX(-50%);display:flex;gap:0.35rem;z-index:6;">
                     <span class="sdot" onclick="sliderGo(0)" style="width:7px;height:7px;border-radius:50%;background:white;cursor:pointer;transition:all 0.2s;"></span>
-                    <span class="sdot" onclick="sliderGo(1)" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.45);cursor:pointer;transition:all 0.2s;"></span>
-                    <span class="sdot" onclick="sliderGo(2)" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.45);cursor:pointer;transition:all 0.2s;"></span>
-                    <span class="sdot" onclick="sliderGo(3)" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.45);cursor:pointer;transition:all 0.2s;"></span>
-                </div>
-
-                <!-- Orbit animation — floating on top (z-index:10) -->
-                <div class="orbit-system">
-                    <div class="core"></div>
-                    <div class="orbit orbit-1"><div class="satellite sat-1"></div></div>
-                    <div class="orbit orbit-2"><div class="satellite sat-2"></div></div>
-                    <div class="orbit orbit-3"><div class="satellite sat-3"></div></div>
+                    <span class="sdot" onclick="sliderGo(1)" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.2s;"></span>
+                    <span class="sdot" onclick="sliderGo(2)" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.2s;"></span>
+                    <span class="sdot" onclick="sliderGo(3)" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all 0.2s;"></span>
                 </div>
             </div>
         </div>
@@ -130,7 +153,7 @@
             const dots   = document.querySelectorAll('.hero-visual .sdot');
             function goTo(n) {
                 slides[current].style.opacity = '0';
-                dots[current].style.background = 'rgba(255,255,255,0.45)';
+                dots[current].style.background = 'rgba(255,255,255,0.4)';
                 current = (n + slides.length) % slides.length;
                 slides[current].style.opacity = '1';
                 dots[current].style.background = 'white';
