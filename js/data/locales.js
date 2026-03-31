@@ -127,7 +127,10 @@ const locales = {
         "ab.phone_label": "Điện thoại",
         "ab.zalo_label": "Zalo — Quét QR để kết nối",
         "ab.yt_label": "Kênh YouTube",
-        "ab.qr_hint": "Quét mã QR để kết nối Zalo"
+        "ab.qr_hint": "Quét mã QR để kết nối Zalo",
+        "ab.modal_call": "Gọi ngay",
+        "ab.modal_send": "Gửi Email",
+        "ab.modal_copy": "Copy"
     },
     en: {
         "head.title": "Hoang Quoc Tuan | Portfolio",
@@ -257,7 +260,10 @@ const locales = {
         "ab.phone_label": "Phone",
         "ab.zalo_label": "Zalo — Scan QR to connect",
         "ab.yt_label": "YouTube Channel",
-        "ab.qr_hint": "Scan QR code to connect on Zalo"
+        "ab.qr_hint": "Scan QR code to connect on Zalo",
+        "ab.modal_call": "Call Now",
+        "ab.modal_send": "Send Email",
+        "ab.modal_copy": "Copy"
     },
     zh: {
         "head.title": "Hoang Quoc Tuan | Portfolio",
@@ -387,7 +393,10 @@ const locales = {
         "ab.phone_label": "电话",
         "ab.zalo_label": "Zalo — 扫码联系",
         "ab.yt_label": "YouTube频道",
-        "ab.qr_hint": "扫描二维码连接Zalo"
+        "ab.qr_hint": "扫描二维码连接Zalo",
+        "ab.modal_call": "立即拨打",
+        "ab.modal_send": "发送邮件",
+        "ab.modal_copy": "复制"
     },
     ja: {
         "head.title": "Hoang Quoc Tuan | Portfolio",
@@ -517,6 +526,9 @@ const locales = {
         "ab.phone_label": "電話",
         "ab.zalo_label": "Zalo — QRスキャンで接続",
         "ab.yt_label": "YouTubeチャンネル",
-        "ab.qr_hint": "QRコードをスキャンしてZaloに接続"
+        "ab.qr_hint": "QRコードをスキャンしてZaloに接続",
+        "ab.modal_call": "今すぐ電話",
+        "ab.modal_send": "メール送信",
+        "ab.modal_copy": "コピー"
     }
 };
