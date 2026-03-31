@@ -12,19 +12,21 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
     <style>
-        /* ---- HERO: compact, auto height ---- */
+        /* ---- HERO: fill viewport ---- */
         .hero {
-            min-height: unset !important;
-            padding-top: 80px !important;
-            padding-bottom: 1.5rem !important;
+            min-height: calc(100vh - 80px) !important;
+            padding-top: 100px !important;
+            padding-bottom: 3rem !important;
+            display: flex !important;
+            align-items: center !important;
         }
-        .hero-container { gap: 2rem !important; align-items: center; }
-        .hero-title { font-size: 3rem !important; margin-bottom: 1rem !important; }
-        .hero-subtitle { font-size: 1rem !important; margin-bottom: 1.5rem !important; }
+        .hero-container { gap: 3rem !important; align-items: center; }
+        .hero-title { font-size: 3.2rem !important; margin-bottom: 1.2rem !important; }
+        .hero-subtitle { font-size: 1.1rem !important; margin-bottom: 1.8rem !important; }
 
         /* ---- hero-visual = slideshow, fills height ---- */
         .hero-visual {
-            height: 360px !important;
+            height: 480px !important;
             border-radius: 14px;
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
@@ -44,21 +46,11 @@
             pointer-events: none;
         }
 
-        /* ---- CTA: very compact ---- */
-        .cta { padding: 1.2rem 0 !important; }
-        .cta-title { font-size: 1.3rem !important; margin-bottom: 0.3rem !important; }
-        .cta-desc  { font-size: 0.8rem !important; margin-bottom: 0.8rem !important; }
-        .btn-lg    { padding: 0.6rem 1.6rem !important; font-size: 0.9rem !important; }
-
-        /* ---- Footer: compact ---- */
-        .footer { padding-top: 1.2rem !important; }
-        .footer-grid { gap: 1.2rem !important; padding-bottom: 0 !important; }
-        .footer-col h4 { margin-bottom: 0.5rem !important; font-size: 0.85rem !important; }
-        .footer-links li { margin-bottom: 0.3rem !important; }
-        .footer-links a, .footer-contact { font-size: 0.78rem !important; }
-        .footer-text { font-size: 0.78rem !important; line-height: 1.5 !important; }
-        .footer-bottom { padding: 0.5rem 0 !important; }
-        .footer-bottom p { font-size: 0.72rem !important; }
+        /* ---- CTA ---- */
+        .cta { padding: 3rem 0 !important; }
+        .cta-title { font-size: 1.6rem !important; margin-bottom: 0.5rem !important; }
+        .cta-desc  { font-size: 0.95rem !important; margin-bottom: 1rem !important; }
+        .btn-lg    { padding: 0.7rem 2rem !important; font-size: 1rem !important; }
     </style>
 </head>
 <body>
