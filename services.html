@@ -946,10 +946,176 @@
             </div>
 
             <div class="tab-content" id="tab-digital">
-                <div class="service-card" style="border-bottom-color: var(--primary-red);">
-                    <div class="service-icon red-icon">💻</div>
-                    <h3 class="service-title" data-i18n="services.card5.title">Dịch vụ Số hóa Quản lý</h3>
-                    <p class="service-desc" data-i18n="services.card5.desc">Ứng dụng Digital Twin và hệ thống tự động hóa quản lý vận hành dự án thông minh.</p>
+                <style>
+                    .digital-hero-header {
+                        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+                        border-radius: 16px; padding: 2.5rem 3rem; margin-bottom: 2.5rem;
+                        display: flex; align-items: center; gap: 2rem;
+                        border-left: 5px solid var(--primary-red);
+                    }
+                    .digital-hero-header .dh-icon { font-size: 3.5rem; flex-shrink: 0; }
+                    .digital-hero-header h3 {
+                        font-family: var(--font-display); font-size: 1.6rem;
+                        font-weight: 800; color: white; margin-bottom: 0.5rem;
+                    }
+                    .digital-hero-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
+                    .digital-masonry {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1.2rem;
+                        margin-bottom: 2.5rem;
+                    }
+                    .digital-card {
+                        background: white;
+                        border-radius: 14px;
+                        overflow: hidden;
+                        box-shadow: var(--shadow-sm);
+                        transition: transform 0.35s ease, box-shadow 0.35s ease;
+                        cursor: pointer;
+                    }
+                    .digital-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
+                    .digital-img-wrap { position: relative; overflow: hidden; }
+                    .digital-img-wrap img {
+                        width: 100%; display: block;
+                        height: 240px; object-fit: cover;
+                        transition: transform 0.5s ease;
+                    }
+                    .digital-card:hover .digital-img-wrap img { transform: scale(1.06); }
+                    .digital-tag {
+                        position: absolute; top: 12px; left: 12px;
+                        background: var(--primary-red); color: white;
+                        font-size: 0.7rem; font-weight: 700;
+                        padding: 3px 10px; border-radius: 20px;
+                        letter-spacing: 1px; text-transform: uppercase;
+                    }
+                    .digital-tag.green { background: var(--primary-green); }
+                    .digital-body { padding: 1.2rem 1.4rem; }
+                    .digital-title {
+                        font-family: var(--font-display);
+                        font-size: 0.95rem; font-weight: 800;
+                        margin-bottom: 0.5rem; color: var(--text-color);
+                        line-height: 1.3;
+                    }
+                    .digital-desc {
+                        font-size: 0.82rem; color: var(--text-muted);
+                        line-height: 1.6;
+                    }
+                    .digital-note {
+                        background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);
+                        border-left: 5px solid #f59e0b;
+                        border-radius: 12px;
+                        padding: 1.5rem 2rem;
+                        margin-bottom: 2.5rem;
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                    }
+                    .digital-note .dn-icon { font-size: 2rem; flex-shrink: 0; margin-top: 0.1rem; }
+                    .digital-note-title {
+                        font-family: var(--font-display);
+                        font-size: 1rem; font-weight: 800;
+                        color: #92400e; margin-bottom: 0.5rem;
+                    }
+                    .digital-note-list {
+                        list-style: none; padding: 0; margin: 0;
+                    }
+                    .digital-note-list li {
+                        font-size: 0.88rem; color: #78350f;
+                        margin-bottom: 0.35rem; line-height: 1.5;
+                        display: flex; align-items: flex-start; gap: 0.5rem;
+                    }
+                    .digital-note-list li::before { content: "▸"; color: #f59e0b; flex-shrink: 0; }
+                    @media (max-width: 768px) {
+                        .digital-masonry { grid-template-columns: 1fr; }
+                        .digital-hero-header { flex-direction: column; text-align: center; }
+                        .digital-note { flex-direction: column; }
+                    }
+                </style>
+
+                <!-- Header -->
+                <div class="digital-hero-header">
+                    <div class="dh-icon">💻</div>
+                    <div>
+                        <h3 data-i18n="services.card5.title">Dịch vụ Số hóa Quản lý</h3>
+                        <p data-i18n="services.card5.desc">Ứng dụng Digital Twin và hệ thống tự động hóa quản lý vận hành dự án thông minh. Xây dựng các nền tảng phần mềm quản lý dự án, nhân sự, công việc giúp tối ưu hóa quy trình vận hành nội bộ doanh nghiệp.</p>
+                    </div>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="digital-masonry">
+
+                    <!-- 1: A2Z WorkHub -->
+                    <div class="digital-card">
+                        <div class="digital-img-wrap">
+                            <img src="assets/m_sohoaquanly1.png" alt="Hệ thống quản lý công việc A2Z WorkHub">
+                            <span class="digital-tag" data-i18n="digital.tag_workhub">Quản lý Công việc</span>
+                        </div>
+                        <div class="digital-body">
+                            <div class="digital-title" data-i18n="digital.p1_title">Hệ thống Quản lý Công việc — A2Z WorkHub</div>
+                            <div class="digital-desc" data-i18n="digital.p1_desc">Nền tảng quản lý công việc nội bộ doanh nghiệp với phân cấp tổ chức đa tầng (Tổ chức → Trung tâm → Phòng ban → Nhóm). Hỗ trợ giao việc, theo dõi tiến độ theo thời gian thực và đánh giá KPI nhân sự tự động.</div>
+                        </div>
+                    </div>
+
+                    <!-- 2: Dashboard báo cáo -->
+                    <div class="digital-card">
+                        <div class="digital-img-wrap">
+                            <img src="assets/m_sohoaquanly2.png" alt="Dashboard báo cáo công việc">
+                            <span class="digital-tag green" data-i18n="digital.tag_dashboard">Dashboard & Báo cáo</span>
+                        </div>
+                        <div class="digital-body">
+                            <div class="digital-title" data-i18n="digital.p2_title">Dashboard Báo cáo — Phân tích Hiệu suất Nhân sự</div>
+                            <div class="digital-desc" data-i18n="digital.p2_desc">Giao diện báo cáo công việc trực quan với biểu đồ cột và tròn theo phòng ban, cá nhân. Phân loại nhiệm vụ theo trạng thái (Đang thực hiện / Hoàn thành / Sắp tới) và xuất báo cáo Excel, PDF A3.</div>
+                        </div>
+                    </div>
+
+                    <!-- 3: Quản lý nhân sự -->
+                    <div class="digital-card">
+                        <div class="digital-img-wrap">
+                            <img src="assets/m_sohoaquanly3.png" alt="Hệ thống quản lý nhân sự">
+                            <span class="digital-tag" data-i18n="digital.tag_hr">Quản lý Nhân sự</span>
+                        </div>
+                        <div class="digital-body">
+                            <div class="digital-title" data-i18n="digital.p3_title">Quản lý Nhân sự — Phân quyền & Vai trò</div>
+                            <div class="digital-desc" data-i18n="digital.p3_desc">Hệ thống quản lý tài khoản nhân sự với phân quyền chi tiết theo vai trò (Admin, Director, Manager, Staff). Tích hợp bộ lọc phân cấp Trung tâm → Phòng ban → Nhóm và thông báo tự động qua sự kiện.</div>
+                        </div>
+                    </div>
+
+                    <!-- 4: Digital Twin / Thông báo -->
+                    <div class="digital-card">
+                        <div class="digital-img-wrap">
+                            <img src="assets/m_sohoaquanly4.png" alt="Hệ thống thông báo và Digital Twin">
+                            <span class="digital-tag green" data-i18n="digital.tag_notify">Thông báo & Tự động hóa</span>
+                        </div>
+                        <div class="digital-body">
+                            <div class="digital-title" data-i18n="digital.p4_title">Hệ thống Thông báo Thông minh & Digital Twin</div>
+                            <div class="digital-desc" data-i18n="digital.p4_desc">Hệ thống thông báo tự động theo sự kiện (giao việc, cập nhật trạng thái, đánh giá KPI) tích hợp thời gian thực. Kết hợp Digital Twin để theo dõi và quản lý vận hành công trình xây dựng theo dữ liệu thực tế.</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Ghi chú dịch vụ -->
+                <div class="digital-note" style="margin-top:2rem;">
+                    <div class="dn-icon">📌</div>
+                    <div>
+                        <div class="digital-note-title" data-i18n="digital.note_title">Ghi chú về Dịch vụ</div>
+                        <ul class="digital-note-list">
+                            <li data-i18n="digital.note1">Các giải pháp số hóa được thiết kế và triển khai theo đặc thù riêng của từng doanh nghiệp.</li>
+                            <li data-i18n="digital.note2">Hệ thống có thể tích hợp với phần mềm sẵn có (ERP, DMS, CRM) hoặc xây dựng từ đầu.</li>
+                            <li data-i18n="digital.note3">Hỗ trợ triển khai web app, mobile app và dashboard quản trị theo thời gian thực.</li>
+                            <li data-i18n="digital.note4">Liên hệ để nhận tư vấn và demo giải pháp phù hợp với nhu cầu của bạn.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align:center; padding: 2.5rem; background: linear-gradient(135deg, #1a1a2e, #0f3460); border-radius: 16px; color: white;">
+                    <p style="font-family:var(--font-display); font-size:1.3rem; font-weight:800; color:white; margin-bottom:0.5rem;" data-i18n="digital.cta_title">Cần tư vấn giải pháp Số hóa Quản lý?</p>
+                    <p style="color:rgba(255,255,255,0.7); margin-bottom:1.5rem;" data-i18n="digital.cta_desc">Liên hệ để nhận tư vấn và demo hệ thống phù hợp với quy trình vận hành của doanh nghiệp bạn</p>
+                    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                        <a href="tel:+84399762377" class="btn btn-primary" data-i18n="corp.cta_call">📞 Gọi ngay</a>
+                        <a href="mailto:hoangquoctuan1395@gmail.com" class="btn btn-secondary" data-i18n="corp.cta_email">✉️ Gửi Email</a>
+                    </div>
                 </div>
             </div>
             
