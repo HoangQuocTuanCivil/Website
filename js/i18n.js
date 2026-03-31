@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const langDropdown = document.getElementById('langDropdown');
-    
     // Check locally saved language, default to VI
     const currentLang = localStorage.getItem('site_lang') || 'vi';
-    langDropdown.value = currentLang;
     
     // Apply Language Function
     const updateLanguage = (lang) => {
@@ -28,10 +25,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial Apply
     updateLanguage(currentLang);
     
-    // Listen for changes
-    langDropdown.addEventListener('change', (e) => {
-        const selectedLang = e.target.value;
-        localStorage.setItem('site_lang', selectedLang);
-        updateLanguage(selectedLang);
-    });
+    // Custom Dropdown Logic
+    const langSelector = document.getElementById('customLangSelector');
+    const langCurrent = document.getElementById('langCurrent');
+    const langOptions = document.getElementById('langOptions');
+    const langOptionItems = document.querySelectorAll('.lang-option');
+    const currentFlag = document.getElementById('currentFlag');
+    const currentLangText = document.getElementById('currentLangText');
+
+    if (langSelector && currentFlag && currentLangText) {
+        // Set initial flag based on currentLang
+        const initOption = document.querySelector(`.lang-option[data-value="${currentLang}"]`);
+        if (initOption) {
+            const flagSrc = initOption.querySelector('img').src;
+            const text = initOption.textContent.trim();
+            currentFlag.src = flagSrc;
+            currentLangText.textContent = text;
+        }
+
+        langCurrent.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langOptions.classList.toggle('show');
+        });
+
+        langOptionItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const selectedLang = item.getAttribute('data-value');
+                const flagSrc = item.querySelector('img').src;
+                const text = item.textContent.trim();
+
+                // Update UI
+                currentFlag.src = flagSrc;
+                currentLangText.textContent = text;
+                langOptions.classList.remove('show');
+
+                // Apply Language
+                localStorage.setItem('site_lang', selectedLang);
+                updateLanguage(selectedLang);
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            if (langOptions.classList.contains('show')) {
+                langOptions.classList.remove('show');
+            }
+        });
+    }
 });

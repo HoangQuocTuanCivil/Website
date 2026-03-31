@@ -11,35 +11,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    navLinks.forEach(n => n.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }));
+    if (navLinks) {
+        navLinks.forEach(n => n.addEventListener('click', () => {
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }));
+    }
 
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = 'var(--shadow-md)';
-            navbar.style.padding = '0';
-        } else {
-            navbar.style.boxShadow = 'var(--shadow-sm)';
-            navbar.style.padding = '0'; // Kept consistent across scroll in new design, adjust if needed
-        }
-    });
-
-    // Smooth Scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                navbar.style.boxShadow = 'var(--shadow-sm)';
             }
         });
-    });
+    }
+
+    // Services Tabs Logic
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-tab');
+                if (targetId) {
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) targetEl.classList.add('active');
+                }
+            });
+        });
+    }
 });

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="head.title">Portfolio | Đổi mới & Công nghệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" style="box-shadow: var(--shadow-md);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <div><span class="logo-red">BIM</span><span class="logo-green">Innovator</span></div>
+                    <span style="font-size: 0.75rem; color: var(--primary-red); font-family: var(--font-body); margin-top: 4px;" data-i18n="nav.subtitle">BIM & Digital Twin</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home">Trang chủ</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav.about">Về tôi</a></li>
+                    <li><a href="services.html" class="nav-link active" data-i18n="nav.services">Dịch vụ</a></li>
+                    <li><a href="projects.html" class="nav-link" data-i18n="nav.projects">Dự án</a></li>
+                </ul>
+                
+                <div class="custom-lang-selector" id="customLangSelector">
+                    <div class="lang-current" id="langCurrent">
+                        <img src="styles/icon/ViietnamLanguage.png" alt="VI" class="lang-flag" id="currentFlag">
+                        <span id="currentLangText">VI</span>
+                    </div>
+                    <div class="lang-options" id="langOptions">
+                        <div class="lang-option" data-value="vi"><img src="styles/icon/ViietnamLanguage.png" alt="VI" class="lang-flag"> VI</div>
+                        <div class="lang-option" data-value="en"><img src="styles/icon/EnglishLanguage.png" alt="EN" class="lang-flag"> EN</div>
+                        <div class="lang-option" data-value="zh"><img src="styles/icon/ChinaLanguage.png" alt="ZH" class="lang-flag"> 中文</div>
+                        <div class="lang-option" data-value="ja"><img src="styles/icon/JapanLanguage.png" alt="JA" class="lang-flag"> JP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="services section-padding" style="margin-top: 80px; min-height: calc(100vh - 80px);">
+        <div class="container">
+            <h2 class="section-title"><span data-i18n="services.title">Dịch vụ</span> <span>Cung cấp</span></h2>
+            
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="tab-online" data-i18n="services.tab1">Đào tạo BIM Online</button>
+                <button class="tab-btn" data-tab="tab-corp" data-i18n="services.tab2">Đào tạo BIM Doanh nghiệp</button>
+                <button class="tab-btn" data-tab="tab-model" data-i18n="services.tab3">Dịch vụ Mô hình BIM</button>
+                <button class="tab-btn" data-tab="tab-design" data-i18n="services.tab4">Dịch vụ Thiết kế BIM</button>
+                <button class="tab-btn" data-tab="tab-digital" data-i18n="services.tab5">Dịch vụ Số hóa Quản lý</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content active" id="tab-online">
+                <div class="service-card" style="border-bottom-color: var(--primary-red);">
+                    <div class="service-icon red-icon">🎓</div>
+                    <h3 class="service-title" data-i18n="services.card1.title">Đào tạo BIM Online</h3>
+                    <p class="service-desc" data-i18n="services.card1.desc">Khóa học trực tuyến linh hoạt, trang bị kỹ năng thực chiến với các phần mềm hàng đầu trong ngành.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-corp">
+                <div class="service-card" style="border-bottom-color: var(--primary-green);">
+                    <div class="service-icon green-icon">🏢</div>
+                    <h3 class="service-title" data-i18n="services.card2.title">Đào tạo BIM Doanh nghiệp</h3>
+                    <p class="service-desc" data-i18n="services.card2.desc">Thiết kế giáo trình chuyên biệt đáp ứng nhu cầu quy trình chuẩn hóa của từng doanh nghiệp.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-model">
+                <div class="service-card" style="border-bottom-color: var(--primary-red);">
+                    <div class="service-icon red-icon">🏗️</div>
+                    <h3 class="service-title" data-i18n="services.card3.title">Dịch vụ Mô hình BIM</h3>
+                    <p class="service-desc" data-i18n="services.card3.desc">Xây dựng mô hình thông tin công trình chính xác cao cho kiến trúc, kết cấu và MEP.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-design">
+                <div class="service-card" style="border-bottom-color: var(--primary-green);">
+                    <div class="service-icon green-icon">📐</div>
+                    <h3 class="service-title" data-i18n="services.card4.title">Dịch vụ Thiết kế BIM</h3>
+                    <p class="service-desc" data-i18n="services.card4.desc">Khai thác dữ liệu mô hình để xuất bản vẽ thiết kế chất lượng cao, đồng bộ hóa tự động.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-digital">
+                <div class="service-card" style="border-bottom-color: var(--primary-red);">
+                    <div class="service-icon red-icon">💻</div>
+                    <h3 class="service-title" data-i18n="services.card5.title">Dịch vụ Số hóa Quản lý</h3>
+                    <p class="service-desc" data-i18n="services.card5.desc">Ứng dụng Digital Twin và hệ thống tự động hóa quản lý vận hành dự án thông minh.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-red">BIM</span><span class="logo-green">Innovator</span>
+                </a>
+                <p class="footer-text" data-i18n="footer.desc">Kiến tạo tương lai với sức mạnh số và các giải pháp thông minh toàn diện trong lĩnh vực Kiến trúc & Xây dựng.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading" data-i18n="footer.links.title">Liên kết Nhanh</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" data-i18n="nav.home">Trang chủ</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">Về tôi</a></li>
+                    <li><a href="projects.html" data-i18n="nav.projects">Dự án</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading" data-i18n="footer.services.title">Dịch vụ</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html" data-i18n="services.tab1">Đào tạo BIM Online</a></li>
+                    <li><a href="services.html" data-i18n="services.tab2">Đào tạo BIM Doanh nghiệp</a></li>
+                    <li><a href="services.html" data-i18n="services.tab3">Dịch vụ Mô hình BIM</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading" data-i18n="footer.contact.title">Liên hệ</h4>
+                <p class="footer-contact">Email: hello@example.com</p>
+                <p class="footer-contact">Điện thoại: +84 123 456 789</p>
+                <p class="footer-contact" data-i18n="footer.contact.address">Địa chỉ: TP. Hồ Chí Minh, Việt Nam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 BIM Innovator. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data/locales.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
