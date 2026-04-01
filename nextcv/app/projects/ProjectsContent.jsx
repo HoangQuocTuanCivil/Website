@@ -30,7 +30,7 @@ export default function ProjectsContent({ projects }) {
               <h2 className="train-section-title" style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: '3px solid var(--primary-green)', fontFamily: 'var(--font-display)' }}>
                 🌉 {t('projects.cat_bim', 'Dự án Mô hình BIM')}
               </h2>
-              <div className="portfolio-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.5rem' }}>
+              <div className="portfolio-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
                 {bimProjects.map(project => <ProjectCard key={project._id} project={project} />)}
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function ProjectsContent({ projects }) {
               <h2 className="train-section-title" style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: '3px solid var(--primary-red)', fontFamily: 'var(--font-display)' }}>
                 🎓 {t('projects.cat_train', 'Đào tạo BIM Doanh nghiệp')}
               </h2>
-              <div className="portfolio-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.5rem' }}>
+              <div className="portfolio-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
                 {trainProjects.map(project => <ProjectCard key={project._id} project={project} />)}
               </div>
             </div>

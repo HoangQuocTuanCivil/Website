@@ -196,7 +196,7 @@ function ContactSection({ t }) {
               <div className="zalo-qr-wrapper">
                 <span className="contact-icon">💬</span>
                 <div className="contact-info">
-                  <div className="contact-label">{t('ab.zalo_label', 'Zalo — Quét QR để kết nối')}</div>
+                  <div className="contact-label">ZALO — QUÉT QR</div>
 
                 </div>
                 <img src="/assets/ZaloQR.jpg" alt="Zalo QR" className="zalo-qr-img" />

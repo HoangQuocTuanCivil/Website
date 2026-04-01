@@ -114,6 +114,14 @@ export const corpTraining = defineType({
       ],
     }),
 
+    // ---- GALLERY ----
+    defineField({
+      name: 'gallery',
+      title: 'Hình ảnh Đào tạo Thực tế',
+      type: 'array',
+      of: [{ type: 'image', options: { hotspot: true } }],
+    }),
+
     // ---- CTA ----
     defineField({
       name: 'ctaTitle',

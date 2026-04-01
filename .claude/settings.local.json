@@ -52,7 +52,10 @@
       "Bash(node --check migrate.mjs)",
       "Bash(SANITY_TOKEN=\"skUiAxkw7A5WbYlOLeCqloCAMovFJEUpnpNDjQIcRwgkPp4uQxmousVmWKZv4mkIhwvXMRUxFVKOS39tYJDHECOlKJ6QX4fsfLzeHlt0yMskcgYCEm7iYL1T3xQ04ZyZWy8OOn8617Nwj1nnGQUx5AD3vI6hvBNyxtoIpqwqsV4xwjKMjNlk\" node migrate.mjs)",
       "Bash(SANITY_TOKEN=\"skUiAxkw7A5WbYlOLeCqloCAMovFJEUpnpNDjQIcRwgkPp4uQxmousVmWKZv4mkIhwvXMRUxFVKOS39tYJDHECOlKJ6QX4fsfLzeHlt0yMskcgYCEm7iYL1T3xQ04ZyZWy8OOn8617Nwj1nnGQUx5AD3vI6hvBNyxtoIpqwqsV4xwjKMjNlk\" node -e \":*)",
-      "WebFetch(domain:www.tuanhq.com)"
+      "WebFetch(domain:www.tuanhq.com)",
+      "Bash(SANITY_TOKEN=\"skCkzz87BHeyptrks6Q7YKEaIs7W74uB2p9RVuBifxkwwvMVQ27x0xZepZtuA8aJ2QruCyZTCxhqw6nvQ9kMqhmLWMxhR95cYWi4cZql6FcU0RGToZzMOkDXfrBBmvRs89TX3M5wSIurze2TO7kqa5Ca434jrFdoV3HlVvKhV2puOYQSYGlx\" node -e \":*)",
+      "Bash(ls \"d:/004. API/Website/assets/m_sohoaquanly\"*)",
+      "Bash(ls \"d:/004. API/Website/nextcv/public/assets/m_sohoaquanly\"*)"
     ]
   }
 }
