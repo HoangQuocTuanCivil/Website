@@ -69,7 +69,9 @@
       "Bash(cp English.png nextcv/public/styles/icon/EnglishLanguage.png)",
       "Bash(cp japaness.png nextcv/public/styles/icon/JapanLanguage.png)",
       "Bash(cp Vietnammis.png nextcv/public/styles/icon/ViietnamLanguage.png)",
-      "Bash(rm -f China.png English.png japaness.png Vietnammis.png)"
+      "Bash(rm -f China.png English.png japaness.png Vietnammis.png)",
+      "Bash(node scripts/patch_en_design.mjs)",
+      "Bash(node scripts/patch_en_design_fix.mjs)"
     ]
   }
 }
