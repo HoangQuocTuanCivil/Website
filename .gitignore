@@ -1,6 +1,8 @@
 node_modules/
-nextcv/.next/
-nextcv/node_modules/
+.next/
+dist/
+.sanity/
+tsconfig.tsbuildinfo
 .env
 .env.local
 *.log

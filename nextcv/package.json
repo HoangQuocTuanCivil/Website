@@ -1,16 +1,17 @@
 {
-  "name": "nextcv",
-  "version": "0.1.0",
+  "name": "bim-innovator-web",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "^15.0.0",
+    "next-sanity": "^9.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@sanity/image-url": "^1.0.0"
   }
 }

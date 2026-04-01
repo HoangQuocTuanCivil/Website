@@ -32,7 +32,27 @@
       "Read(//d/004. API/Website/**)",
       "Bash(grep -r \"avatar\\\\|anh_dai_dien\" \"d:/004. API/Website\"/*.html \"d:/004. API/Website\"/js/*.js \"d:/004. API/Website\"/nextcv/*.jsx)",
       "Bash(find 'd:/004. API/Website/cms' -name .sanity -type d -exec ls -lhR {})",
-      "Bash(2)"
+      "Bash(2)",
+      "Bash(rm -rf Lir/Project/)",
+      "Bash(rm -f \"Lir/PORTFOLIO_Hoàng Quốc Tuấn.pdf\")",
+      "Bash(cp \"Lir/anh dai dien.jpg\" \"assets/anh_dai_dien.jpg\")",
+      "Bash(cp \"Lir/ZaloQR.jpg\" \"assets/ZaloQR.jpg\")",
+      "Bash(cp \"Lir/iconwebsite.jpg\" \"assets/iconwebsite.jpg\")",
+      "Bash(cp styles/*.css nextcv/public/styles/)",
+      "Bash(cp styles/icon/* nextcv/public/styles/icon/)",
+      "Bash(cp favicon.ico favicon-32.png apple-touch-icon.png nextcv/public/)",
+      "Bash(cp assets/anh_dai_dien.jpg assets/avatar.jpg assets/ZaloQR.jpg assets/iconwebsite.jpg assets/bridge_hero.png nextcv/public/assets/)",
+      "Bash(node -e \":*)",
+      "Bash(npm run:*)",
+      "Bash(node node_modules/next/dist/bin/next build)",
+      "Bash(npx next:*)",
+      "Bash(node -e \"require\\(''''next/dist/bin/next''''\\)\" -- build)",
+      "Bash(node -e \"console.log\\(require\\(''d:/004. API/Website/nextcv/node_modules/next/package.json''\\).version\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/next/package.json''\\).version\\)\")",
+      "Bash(node --check migrate.mjs)",
+      "Bash(SANITY_TOKEN=\"skUiAxkw7A5WbYlOLeCqloCAMovFJEUpnpNDjQIcRwgkPp4uQxmousVmWKZv4mkIhwvXMRUxFVKOS39tYJDHECOlKJ6QX4fsfLzeHlt0yMskcgYCEm7iYL1T3xQ04ZyZWy8OOn8617Nwj1nnGQUx5AD3vI6hvBNyxtoIpqwqsV4xwjKMjNlk\" node migrate.mjs)",
+      "Bash(SANITY_TOKEN=\"skUiAxkw7A5WbYlOLeCqloCAMovFJEUpnpNDjQIcRwgkPp4uQxmousVmWKZv4mkIhwvXMRUxFVKOS39tYJDHECOlKJ6QX4fsfLzeHlt0yMskcgYCEm7iYL1T3xQ04ZyZWy8OOn8617Nwj1nnGQUx5AD3vI6hvBNyxtoIpqwqsV4xwjKMjNlk\" node -e \":*)",
+      "WebFetch(domain:www.tuanhq.com)"
     ]
   }
 }
