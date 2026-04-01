@@ -15,7 +15,7 @@
 .bg-hud {
     position: absolute;
     pointer-events: none;
-    opacity: var(--op, 0.15);
+    opacity: var(--op, 0.30);
     color: var(--hc, rgba(6,182,212,0.9));
     filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 20px currentColor);
     will-change: transform;
@@ -39,7 +39,7 @@
 /* 1. Radar ring — top-left */
 .bh-1 {
     top: 6%; left: 4%; width: 192px; height: 192px;
-    --hc: rgba(6,182,212,0.9); --op: 0.28;
+    --hc: rgba(6,182,212,0.9); --op: 0.56;
     --dur: 24s; --dur2: 7s; --dur3: 35s; --delay: 0s; --delay2: -2s;
     --dx1: 120px; --dy1: 80px; --dx2: -90px; --dy2: -110px; --dx3: 70px; --dy3: 95px;
 }
@@ -47,7 +47,7 @@
 /* 2. Bracket panel — top-center-right */
 .bh-2 {
     top: 12%; right: 15%; width: 224px; height: 144px;
-    --hc: rgba(99,102,241,0.9); --op: 0.24;
+    --hc: rgba(99,102,241,0.9); --op: 0.48;
     --dur: 26s; --dur2: 9s; --delay: -3s; --delay2: -1s;
     --dx1: -100px; --dy1: 90px; --dx2: 130px; --dy2: -70px; --dx3: -60px; --dy3: 110px;
 }
@@ -55,7 +55,7 @@
 /* 3. Waveform — left-center */
 .bh-3 {
     top: 30%; left: 7%; width: 208px; height: 96px;
-    --hc: rgba(6,182,212,0.9); --op: 0.26;
+    --hc: rgba(6,182,212,0.9); --op: 0.52;
     --dur: 20s; --dur2: 10s; --delay: -5s; --delay2: -4s;
     --dx1: 90px; --dy1: -100px; --dx2: -80px; --dy2: 120px; --dx3: 110px; --dy3: -70px;
 }
@@ -63,7 +63,7 @@
 /* 4. Target crosshair — right-center */
 .bh-4 {
     top: 35%; right: 5%; width: 160px; height: 160px;
-    --hc: rgba(139,92,246,0.9); --op: 0.24;
+    --hc: rgba(139,92,246,0.9); --op: 0.48;
     --dur: 28s; --dur2: 8s; --dur3: 45s; --delay: -7s; --delay2: -3s;
     --dx1: -140px; --dy1: 85px; --dx2: 100px; --dy2: -120px; --dx3: -75px; --dy3: 130px;
 }
@@ -71,7 +71,7 @@
 /* 5. Network nodes — center-left */
 .bh-5 {
     top: 50%; left: 12%; width: 176px; height: 144px;
-    --hc: rgba(6,182,212,0.9); --op: 0.22;
+    --hc: rgba(6,182,212,0.9); --op: 0.44;
     --dur: 22s; --dur2: 11s; --delay: -2s; --delay2: -6s;
     --dx1: 110px; --dy1: 75px; --dx2: -95px; --dy2: -100px; --dx3: 65px; --dy3: 115px;
 }
@@ -79,7 +79,7 @@
 /* 6. Circular gauge — center-right */
 .bh-6 {
     top: 48%; right: 10%; width: 176px; height: 176px;
-    --hc: rgba(99,102,241,0.9); --op: 0.26;
+    --hc: rgba(99,102,241,0.9); --op: 0.52;
     --dur: 25s; --dur2: 7s; --dur3: 50s; --delay: -9s; --delay2: -2s;
     --dx1: -85px; --dy1: -130px; --dx2: 140px; --dy2: 90px; --dx3: -110px; --dy3: -70px;
 }
@@ -87,7 +87,7 @@
 /* 7. Data grid / bar chart — bottom-left area */
 .bh-7 {
     top: 65%; left: 5%; width: 160px; height: 112px;
-    --hc: rgba(6,182,212,0.9); --op: 0.24;
+    --hc: rgba(6,182,212,0.9); --op: 0.48;
     --dur: 21s; --dur2: 9s; --delay: -4s; --delay2: -5s;
     --dx1: 80px; --dy1: 105px; --dx2: -120px; --dy2: -65px; --dx3: 95px; --dy3: -90px;
 }
@@ -95,7 +95,7 @@
 /* 8. Hexagon — bottom-right area */
 .bh-8 {
     top: 68%; right: 8%; width: 154px; height: 154px;
-    --hc: rgba(139,92,246,0.9); --op: 0.22;
+    --hc: rgba(139,92,246,0.9); --op: 0.44;
     --dur: 27s; --dur2: 10s; --dur3: 55s; --delay: -6s; --delay2: -1s;
     --dx1: -115px; --dy1: 95px; --dx2: 75px; --dy2: -140px; --dx3: -90px; --dy3: 60px;
 }
@@ -103,7 +103,7 @@
 /* 9. Circuit paths — lower-left */
 .bh-9 {
     top: 80%; left: 15%; width: 176px; height: 128px;
-    --hc: rgba(6,182,212,0.9); --op: 0.24;
+    --hc: rgba(6,182,212,0.9); --op: 0.48;
     --dur: 23s; --dur2: 8s; --delay: -8s; --delay2: -3s;
     --dx1: 100px; --dy1: -85px; --dx2: -70px; --dy2: 120px; --dx3: 80px; --dy3: -105px;
 }
@@ -111,7 +111,7 @@
 /* 10. Signal waves — lower-right */
 .bh-10 {
     top: 82%; right: 12%; width: 144px; height: 128px;
-    --hc: rgba(99,102,241,0.9); --op: 0.22;
+    --hc: rgba(99,102,241,0.9); --op: 0.44;
     --dur: 19s; --dur2: 11s; --delay: -1s; --delay2: -7s;
     --dx1: -90px; --dy1: 75px; --dx2: 130px; --dy2: -95px; --dx3: -80px; --dy3: 110px;
 }
@@ -119,7 +119,7 @@
 /* 11. Binary ring — mid-top */
 .bh-11 {
     top: 18%; left: 40%; width: 134px; height: 134px;
-    --hc: rgba(6,182,212,0.9); --op: 0.20;
+    --hc: rgba(6,182,212,0.9); --op: 0.40;
     --dur: 30s; --dur2: 9s; --dur3: 60s; --delay: -10s; --delay2: -4s;
     --dx1: 130px; --dy1: -70px; --dx2: -105px; --dy2: 115px; --dx3: 85px; --dy3: -125px;
 }
@@ -127,7 +127,7 @@
 /* 12. Gear outline — mid-bottom */
 .bh-12 {
     top: 55%; left: 55%; width: 144px; height: 144px;
-    --hc: rgba(139,92,246,0.9); --op: 0.22;
+    --hc: rgba(139,92,246,0.9); --op: 0.44;
     --dur: 26s; --dur2: 10s; --dur3: 48s; --delay: -5s; --delay2: -8s;
     --dx1: -75px; --dy1: 135px; --dx2: 115px; --dy2: -85px; --dx3: -100px; --dy3: 70px;
 }
@@ -156,12 +156,12 @@
 
 @media (max-width: 768px) {
     .bh-2, .bh-4, .bh-6, .bh-8, .bh-10, .bh-12 { display: none; }
-    .bg-hud { --op: 0.16; }
+    .bg-hud { --op: 0.32; }
 }
 
 @media (max-width: 480px) {
     .bh-5, .bh-7, .bh-9, .bh-11 { display: none; }
-    .bg-hud { --op: 0.12; }
+    .bg-hud { --op: 0.24; }
 }
 
 /* ---- Accessibility ---- */
