@@ -55,10 +55,14 @@ const fallbackServices = [
     title: {
       vi: 'Đào tạo BIM Online',
       en: 'Online BIM Training',
+      zh: 'BIM在线培训',
+      ja: 'BIMオンライントレーニング',
     },
     description: {
       vi: 'Khóa học trực tuyến linh hoạt, trang bị kỹ năng thực chiến với các phần mềm hàng đầu trong ngành.',
       en: 'Flexible online courses providing practical skills with top industry software.',
+      zh: '灵活的在线课程，配备行业顶尖软件的实践技能。',
+      ja: '最新のソフトウェアを使用した実践スキルを習得する柔軟なオンラインコース。',
     },
     icon: '🌉',
     link: '/services',
@@ -69,10 +73,14 @@ const fallbackServices = [
     title: {
       vi: 'Dịch vụ Mô hình BIM',
       en: 'BIM Modeling Services',
+      zh: 'BIM建模服务',
+      ja: 'BIMモデリングサービス',
     },
     description: {
       vi: 'Xây dựng mô hình thông tin công trình chính xác cao cho kiến trúc, kết cấu và MEP.',
       en: 'Building high-precision building information models for architecture, structure, and MEP.',
+      zh: '为建筑、结构和机电系统建立高精度的建筑信息模型。',
+      ja: '建築、構造、設備向けのフルディテールな建築情報モデルを作成します。',
     },
     icon: '🏗️',
     link: '/services',
@@ -83,10 +91,14 @@ const fallbackServices = [
     title: {
       vi: 'Dịch vụ Số hóa Quản lý',
       en: 'Digital Management Services',
+      zh: '数字化管理服务',
+      ja: 'デジタル管理サービス',
     },
     description: {
       vi: 'Ứng dụng Digital Twin và hệ thống tự động hóa quản lý vận hành dự án thông minh.',
       en: 'Applying Digital Twins and smart automation systems for project operations and management.',
+      zh: '应用数字孪生及智能自动化系统于项目运营及管理。',
+      ja: 'プロジェクトの運用と管理にデジタルツインとスマート自動化システムを応用します。',
     },
     icon: '💻',
     link: '/services',

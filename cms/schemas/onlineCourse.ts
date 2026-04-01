@@ -59,7 +59,7 @@ export const onlineCourse = defineType({
                 {
                   type: 'object',
                   fields: [
-                    { name: 'label', type: 'string', title: 'Nhãn' },
+                    { name: 'label', type: 'localizedString', title: 'Nhãn (Video/File/Bài viết...)' },
                     {
                       name: 'type',
                       type: 'string',
@@ -74,7 +74,7 @@ export const onlineCourse = defineType({
                     },
                   ],
                   preview: {
-                    select: { title: 'label' },
+                    select: { title: 'label.vi' },
                   },
                 },
               ],

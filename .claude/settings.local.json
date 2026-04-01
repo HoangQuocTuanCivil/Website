@@ -56,7 +56,20 @@
       "Bash(SANITY_TOKEN=\"skCkzz87BHeyptrks6Q7YKEaIs7W74uB2p9RVuBifxkwwvMVQ27x0xZepZtuA8aJ2QruCyZTCxhqw6nvQ9kMqhmLWMxhR95cYWi4cZql6FcU0RGToZzMOkDXfrBBmvRs89TX3M5wSIurze2TO7kqa5Ca434jrFdoV3HlVvKhV2puOYQSYGlx\" node -e \":*)",
       "Bash(ls \"d:/004. API/Website/assets/m_sohoaquanly\"*)",
       "Bash(ls \"d:/004. API/Website/nextcv/public/assets/m_sohoaquanly\"*)",
-      "Bash(grep -v \"\\\\.git$\")"
+      "Bash(grep -v \"\\\\.git$\")",
+      "Bash(node -e ':*)",
+      "Bash(SANITY_TOKEN=\"skiuFG2XoSSNQ08z4wj8aOJPMk2mnMchiOQNJz7yylXZ0VszObcAaKaUzL3oSAR74Gbve32OFXhV4pMLk8HCti6zT8rLiTMpIRa00D3WozVOohLTrtNYHjt7x5RghTFvFBs1erheAw2nymlKGBhRDyk71gbJepJ3kcDCUVGLgNF8sMxT7pw4\" node patch_i18n.mjs)",
+      "Bash(ls cms/patch_*.mjs cms/migrate.mjs)",
+      "Bash(rm -f index.html about.html services.html projects.html)",
+      "Bash(rm -rf js/)",
+      "Bash(rm -rf styles/)",
+      "Bash(rm -rf cms/dist/)",
+      "Bash(rm -f cms/tsconfig.tsbuildinfo cms/next-env.d.ts)",
+      "Bash(cp China.png nextcv/public/styles/icon/ChinaLanguage.png)",
+      "Bash(cp English.png nextcv/public/styles/icon/EnglishLanguage.png)",
+      "Bash(cp japaness.png nextcv/public/styles/icon/JapanLanguage.png)",
+      "Bash(cp Vietnammis.png nextcv/public/styles/icon/ViietnamLanguage.png)",
+      "Bash(rm -f China.png English.png japaness.png Vietnammis.png)"
     ]
   }
 }

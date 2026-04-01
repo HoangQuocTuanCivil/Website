@@ -20,7 +20,7 @@ export default function ServicesContent({ courses, trainings, bimProjects, desig
     <section className="services section-padding" style={{ marginTop: 80, minHeight: 'calc(100vh - 80px)' }}>
       <div className="container">
         <h2 className="section-title">
-          <span>{t('services.title', 'Dịch vụ')}</span> <span>Cung cấp</span>
+          <span>{t('services.title', 'Dịch vụ')}</span> <span>{t('services.provided', 'Cung cấp')}</span>
         </h2>
 
         <div className="services-tabs">
@@ -236,7 +236,7 @@ function LessonCard({ lesson, idx, loc }) {
                 color: tag.type === 'video' ? 'var(--primary-red)' : 'var(--primary-green)',
               }}
             >
-              {tag.type === 'video' ? '🎬' : '📄'} {tag.label}
+              {tag.type === 'video' ? '🎬' : '📄'} {loc(tag.label) || tag.label}
             </span>
           ))}
         </div>

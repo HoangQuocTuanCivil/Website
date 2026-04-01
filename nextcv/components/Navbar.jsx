@@ -6,10 +6,10 @@ import { usePathname } from 'next/navigation'
 import { useI18n } from '../lib/i18n'
 
 const NAV_LINKS = [
-  { href: '/', labelKey: 'nav_home', fallback: 'Trang chủ' },
-  { href: '/about', labelKey: 'nav_about', fallback: 'Về tôi' },
-  { href: '/services', labelKey: 'nav_services', fallback: 'Dịch vụ' },
-  { href: '/projects', labelKey: 'nav_projects', fallback: 'Dự án' },
+  { href: '/', labelKey: 'nav.home', fallback: 'Trang chủ' },
+  { href: '/about', labelKey: 'nav.about', fallback: 'Về tôi' },
+  { href: '/services', labelKey: 'nav.services', fallback: 'Dịch vụ' },
+  { href: '/projects', labelKey: 'nav.projects', fallback: 'Dự án' },
 ]
 
 const LANGUAGES = [
@@ -80,11 +80,7 @@ export default function Navbar() {
             onClick={() => setLangOpen((prev) => !prev)}
             type="button"
           >
-            <img
-              className="lang-flag"
-              src={currentLang.flag}
-              alt={currentLang.label}
-            />
+            <img className="lang-flag" src={currentLang.flag} alt={currentLang.label} />
             {currentLang.label}
           </button>
           {langOpen && (

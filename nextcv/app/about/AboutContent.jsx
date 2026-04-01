@@ -62,9 +62,7 @@ export default function AboutContent({ data }) {
         <section className="section-padding">
           <div className="container">
             <p className="section-label" style={{ textAlign: 'center' }}>{t('ab.career_label', 'Career Path')}</p>
-            <h2 className="section-heading" style={{ textAlign: 'center' }}>
-              Hành trình <span className="highlight-red">Sự nghiệp</span>
-            </h2>
+            <h2 className="section-heading" style={{ textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: t('ab.career_heading', 'Hành trình <span class="highlight-red">Sự nghiệp</span>') }} />
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div className="timeline">
                 {careerLeft.map((item, i) => (
@@ -96,9 +94,7 @@ export default function AboutContent({ data }) {
         <section className="section-padding bg-alt">
           <div className="container">
             <p className="section-label" style={{ textAlign: 'center' }}>{t('ab.edu_label', 'Education')}</p>
-            <h2 className="section-heading" style={{ textAlign: 'center' }}>
-              Nền tảng <span className="highlight-green">Học vấn</span>
-            </h2>
+            <h2 className="section-heading" style={{ textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: t('ab.edu_heading', 'Nền tảng <span class="highlight-green">Học vấn</span>') }} />
             <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(education.length, 3)}, 1fr)`, gap: '2rem' }}>
               {education.map((item, i) => (
                 <div key={item._key || i} className="timeline">
@@ -120,9 +116,7 @@ export default function AboutContent({ data }) {
         <section className="section-padding">
           <div className="container">
             <p className="section-label" style={{ textAlign: 'center' }}>{t('ab.skill_label', 'Chuyên môn')}</p>
-            <h2 className="section-heading" style={{ textAlign: 'center' }}>
-              Kỹ năng & <span className="highlight-red">Công cụ</span>
-            </h2>
+            <h2 className="section-heading" style={{ textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: t('ab.skill_heading', 'Kỹ năng & <span class="highlight-red">Công cụ</span>') }} />
             <div className="skills-grid">
               {skills.map((cat, i) => (
                 <div key={cat._key || i} className="skill-category">
@@ -162,9 +156,7 @@ function ContactSection({ t }) {
       <section className="contact-section">
         <div className="container">
           <p className="section-label" style={{ textAlign: 'center', color: 'rgba(255,255,255,0.5)' }}>{t('ab.contact_label', 'Kết nối')}</p>
-          <h2 className="section-heading" style={{ textAlign: 'center', color: 'white' }}>
-            Liên hệ <span style={{ color: 'var(--primary-green)' }}>Trực tiếp</span>
-          </h2>
+          <h2 className="section-heading" style={{ textAlign: 'center', color: 'white' }} dangerouslySetInnerHTML={{ __html: t('ab.contact_heading', 'Liên hệ <span style="color:var(--primary-green)">Trực tiếp</span>') }} />
           <div className="contact-grid">
             <div className="contact-card" style={{ cursor: 'pointer' }} onClick={() => setModal('phone')}>
               <span className="contact-icon">📞</span>
