@@ -4,10 +4,13 @@ import BgTechIcons from '../components/BgTechIcons'
 import ClientProviders from '../components/ClientProviders'
 
 export const metadata = {
-  title: 'BIM Innovator | Hoàng Quốc Tuấn',
+  title: {
+    default: 'BIM Innovator',
+    template: '%s | BIM Innovator',
+  },
   description: 'Chuyên gia giải pháp BIM & Digital Twin tại Việt Nam',
   openGraph: {
-    title: 'BIM Innovator | Hoàng Quốc Tuấn',
+    title: 'BIM Innovator',
     description: 'Chuyên gia giải pháp BIM & Digital Twin tại Việt Nam',
     url: 'https://tuanhq.com',
     type: 'website',
