@@ -823,5 +823,14 @@
     })();
 
     </script>
+    <script src="js/sanity-client.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            SanityCMS.loadHomePage(function(data) {
+                // Homepage CMS data loaded — can be used for dynamic content
+                console.log('SanityCMS: Homepage data loaded');
+            });
+        });
+    </script>
 </body>
 </html>

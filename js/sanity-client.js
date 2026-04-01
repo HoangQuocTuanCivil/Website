@@ -196,10 +196,135 @@ const SanityCMS = (function () {
     '</div>';
   }
 
+  // ---- Online Courses (services.html tab-online) ----
+  function loadOnlineCourses(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var lang = localStorage.getItem('site_lang') || 'vi';
+
+    query('*[_type == "onlineCourse"] | order(order asc)')
+      .then(function (items) {
+        if (!items || items.length === 0) return;
+
+        var item = items[0]; // Primary course
+        var lessonsGrid = container.querySelector('.course-lessons');
+        if (!lessonsGrid || !item.lessons) return;
+
+        lessonsGrid.innerHTML = item.lessons.map(function (lesson) {
+          var tags = (lesson.tags || []).map(function (t) {
+            var tagClass = t.type === 'video' ? 'tag-video' : t.type === 'file' ? 'tag-file' : 'tag-file';
+            var tagIcon = t.type === 'video' ? '🎬' : '📄';
+            return '<span class="lesson-tag ' + tagClass + '">' + tagIcon + ' ' + (t.label || '') + '</span>';
+          }).join('');
+
+          return '<div class="lesson-card">' +
+            '<div class="lesson-num">' + (lesson.number || '') + '</div>' +
+            '<div class="lesson-body">' +
+              '<div class="lesson-title">' + getLocalized(lesson.title, lang) + '</div>' +
+              '<div class="lesson-tags">' + tags + '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+      })
+      .catch(function (err) {
+        console.warn('SanityCMS: Failed to load online courses, using fallback HTML', err);
+      });
+  }
+
+  // ---- Corporate Training (services.html tab-corp) ----
+  function loadCorpTraining(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+
+    var lang = localStorage.getItem('site_lang') || 'vi';
+
+    query('*[_type == "corpTraining"] | order(order asc)')
+      .then(function (items) {
+        if (!items || items.length === 0) return;
+
+        var item = items[0];
+
+        // Update target audience
+        var targetGrid = container.querySelector('.target-grid');
+        if (targetGrid && item.targetAudience) {
+          targetGrid.innerHTML = item.targetAudience.map(function (t) {
+            return '<div class="target-card">' +
+              '<div class="tc-icon">' + (t.icon || '') + '</div>' +
+              '<div class="tc-title">' + getLocalized(t.title, lang) + '</div>' +
+            '</div>';
+          }).join('');
+        }
+
+        // Update outcomes
+        var outcomeGrid = container.querySelector('.outcome-grid');
+        if (outcomeGrid && item.outcomes) {
+          outcomeGrid.innerHTML = item.outcomes.map(function (o) {
+            return '<div class="outcome-item">' +
+              '<span class="oi-icon">' + (o.icon || '') + '</span>' +
+              '<span>' + getLocalized(o.text, lang) + '</span>' +
+            '</div>';
+          }).join('');
+        }
+
+        // Update modules
+        var moduleGrid = container.querySelector('.module-grid');
+        if (moduleGrid && item.modules) {
+          moduleGrid.innerHTML = item.modules.map(function (mod) {
+            var modItems = (mod.items || []).map(function (li) {
+              return '<li>' + getLocalized(li, lang) + '</li>';
+            }).join('');
+
+            var imgHtml = mod.image
+              ? '<img class="module-img" src="' + imageUrl(mod.image) + '" alt="' + getLocalized(mod.title, lang) + '" loading="lazy">'
+              : '';
+
+            return '<div class="module-card">' +
+              imgHtml +
+              '<div class="module-body">' +
+                '<div class="module-num">' + getLocalized(mod.moduleNumber, lang) + '</div>' +
+                '<div class="module-title">' + getLocalized(mod.title, lang) + '</div>' +
+                '<ul class="module-list">' + modItems + '</ul>' +
+              '</div>' +
+            '</div>';
+          }).join('');
+        }
+      })
+      .catch(function (err) {
+        console.warn('SanityCMS: Failed to load corp training, using fallback HTML', err);
+      });
+  }
+
+  // ---- Homepage Featured Content (index.html) ----
+  function loadHomePage(callback) {
+    query('*[_type == "homePage"][0]{ heroTitle, heroSubtitle, heroCta, heroCtaLink, featuredServicesTitle, featuredServices, featuredProjectsTitle, featuredProjects[]->{ _id, title, description, category, image, badge, badgeColor, tags }, stats }')
+      .then(function (data) {
+        if (data && callback) callback(data);
+      })
+      .catch(function (err) {
+        console.warn('SanityCMS: Failed to load home page data', err);
+      });
+  }
+
+  // ---- Site Settings ----
+  function loadSiteSettings(callback) {
+    query('*[_type == "siteSettings"][0]')
+      .then(function (data) {
+        if (data && callback) callback(data);
+      })
+      .catch(function (err) {
+        console.warn('SanityCMS: Failed to load site settings', err);
+      });
+  }
+
   return {
     loadBimProjects: loadBimProjects,
     loadDesignServices: loadDesignServices,
     loadProjects: loadProjects,
+    loadOnlineCourses: loadOnlineCourses,
+    loadCorpTraining: loadCorpTraining,
+    loadHomePage: loadHomePage,
+    loadSiteSettings: loadSiteSettings,
     query: query,
     imageUrl: imageUrl,
   };
