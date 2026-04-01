@@ -55,7 +55,8 @@
       "WebFetch(domain:www.tuanhq.com)",
       "Bash(SANITY_TOKEN=\"skCkzz87BHeyptrks6Q7YKEaIs7W74uB2p9RVuBifxkwwvMVQ27x0xZepZtuA8aJ2QruCyZTCxhqw6nvQ9kMqhmLWMxhR95cYWi4cZql6FcU0RGToZzMOkDXfrBBmvRs89TX3M5wSIurze2TO7kqa5Ca434jrFdoV3HlVvKhV2puOYQSYGlx\" node -e \":*)",
       "Bash(ls \"d:/004. API/Website/assets/m_sohoaquanly\"*)",
-      "Bash(ls \"d:/004. API/Website/nextcv/public/assets/m_sohoaquanly\"*)"
+      "Bash(ls \"d:/004. API/Website/nextcv/public/assets/m_sohoaquanly\"*)",
+      "Bash(grep -v \"\\\\.git$\")"
     ]
   }
 }
