@@ -21,7 +21,18 @@
       "Bash(npx tsc:*)",
       "Bash(npx -p typescript tsc --noEmit --pretty)",
       "Bash(./node_modules/.bin/tsc --noEmit --pretty)",
-      "Bash(node node_modules/typescript/bin/tsc --noEmit --pretty)"
+      "Bash(node node_modules/typescript/bin/tsc --noEmit --pretty)",
+      "Bash(find 'd:/004. API/Website' -type f -not -path ./.git/* -not -path ./.git*)",
+      "Bash(find 'd:/004. API/Website' -type f -not -path ./.git/* ! -name .git*)",
+      "Bash(du -sh d:/004. API/Website/*)",
+      "Bash(grep -l \"assets/\\\\|Lir/\" \"d:/004. API/Website\"/*.html)",
+      "Bash(grep -o 'src=\"\"\"\"[^\"\"\"\"]*\\\\\\(Lir\\\\|assets\\\\\\)[^\"\"\"\"]*\"\"\"\"' \"d:/004. API/Website\"/*.html)",
+      "Bash(grep -r \"anh dai dien\" \"d:/004. API/Website\"/*.html)",
+      "Bash(find \"d:/004. API/Website\" -type f \\\\\\( -name \"*.png\" -o -name \"*.jpg\" -o -name \"*.pdf\" \\\\\\) ! -path \"./.git/*\" -exec ls -lh {} +)",
+      "Read(//d/004. API/Website/**)",
+      "Bash(grep -r \"avatar\\\\|anh_dai_dien\" \"d:/004. API/Website\"/*.html \"d:/004. API/Website\"/js/*.js \"d:/004. API/Website\"/nextcv/*.jsx)",
+      "Bash(find 'd:/004. API/Website/cms' -name .sanity -type d -exec ls -lhR {})",
+      "Bash(2)"
     ]
   }
 }
