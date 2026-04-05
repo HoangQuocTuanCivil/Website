@@ -384,9 +384,8 @@ function CorpTrainingTab({ trainings, loc, t }) {
             borderBottom: '3px solid var(--primary-red)',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.6rem',
           }}>
-            🎯 <span>{t('corp.target_title', 'Đối tượng tham gia')}</span>
+            <span>{t('corp.target_title', 'Đối tượng tham gia')}</span>
           </div>
           <div className="target-grid" style={{
             display: 'grid',
@@ -412,9 +411,8 @@ function CorpTrainingTab({ trainings, loc, t }) {
             borderBottom: '3px solid var(--primary-green)',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.6rem',
           }}>
-            ✅ <span>{t('corp.outcome_title', 'Kết quả sau khoá học')}</span>
+            <span>{t('corp.outcome_title', 'Kết quả sau khoá học')}</span>
           </div>
           <div className="outcome-grid" style={{
             display: 'grid',
@@ -424,8 +422,7 @@ function CorpTrainingTab({ trainings, loc, t }) {
             {outcomes.map((item, idx) => (
               <div key={idx} className="outcome-item" style={{
                 display: 'flex',
-                alignItems: 'flex-start',
-                gap: '0.7rem',
+                alignItems: 'center',
                 background: 'white',
                 padding: '0.9rem 1.2rem',
                 borderRadius: 8,
@@ -433,9 +430,6 @@ function CorpTrainingTab({ trainings, loc, t }) {
                 fontSize: '0.9rem',
                 fontWeight: 600,
               }}>
-                <span className="oi-icon" style={{ fontSize: '1.3rem', flexShrink: 0 }}>
-                  {item.icon || '✅'}
-                </span>
                 <span>{loc(item.text)}</span>
               </div>
             ))}
@@ -455,9 +449,8 @@ function CorpTrainingTab({ trainings, loc, t }) {
             borderBottom: '3px solid var(--primary-red)',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.6rem',
           }}>
-            📚 <span>{t('corp.module_title', 'Nội dung chương trình')}</span>
+            <span>{t('corp.module_title', 'Nội dung chương trình')}</span>
           </div>
           <div className="module-grid" style={{
             display: 'grid',
@@ -483,9 +476,8 @@ function CorpTrainingTab({ trainings, loc, t }) {
             borderBottom: '3px solid var(--primary-red)',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.6rem',
           }}>
-            📸 <span>{t('corp.gallery_title', 'Hình ảnh Đào tạo Thực tế')}</span>
+            <span>{t('corp.gallery_title', 'Hình ảnh Đào tạo Thực tế')}</span>
           </div>
           <div style={{
             display: 'grid',
@@ -1277,13 +1269,7 @@ function DigitalManagementTab({ loc, t }) {
         borderRadius: 12,
         padding: '1.5rem 2rem',
         marginBottom: '2.5rem',
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: '1rem',
       }}>
-        <div className="dn-icon" style={{ fontSize: '2rem', flexShrink: 0, marginTop: '0.1rem' }}>
-          📌
-        </div>
         <div>
           <div className="digital-note-title" style={{
             fontFamily: 'var(--font-display)',
