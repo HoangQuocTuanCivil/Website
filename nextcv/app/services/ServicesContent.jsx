@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useI18n } from '../../lib/i18n'
 import { urlFor } from '../../lib/sanity'
 
@@ -16,6 +16,24 @@ export default function ServicesContent({ courses, trainings, bimProjects, desig
     { label: t('services.tab5', 'Dịch vụ Số hóa Quản lý') },
   ]
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const tabParam = params.get('tab')
+    if (tabParam !== null) {
+      const idx = parseInt(tabParam, 10)
+      if (!isNaN(idx) && idx >= 0 && idx < tabs.length) {
+        setActiveTab(idx)
+      }
+    }
+  }, [tabs.length])
+
+  const handleTabClick = (i) => {
+    setActiveTab(i)
+    const url = new URL(window.location)
+    url.searchParams.set('tab', i.toString())
+    window.history.pushState({}, '', url)
+  }
+
   return (
     <section className="services section-padding" style={{ marginTop: 80, minHeight: 'calc(100vh - 80px)' }}>
       <div className="container">
@@ -28,7 +46,7 @@ export default function ServicesContent({ courses, trainings, bimProjects, desig
             <button
               key={i}
               className={`tab-btn${activeTab === i ? ' active' : ''}`}
-              onClick={() => setActiveTab(i)}
+              onClick={() => handleTabClick(i)}
             >
               {tab.label}
             </button>

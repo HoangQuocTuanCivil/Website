@@ -65,7 +65,7 @@ const fallbackServices = [
       ja: '最新のソフトウェアを使用した実践スキルを習得する柔軟なオンラインコース。',
     },
     icon: '🌉',
-    link: '/services',
+    link: '/services?tab=0',
     accentColor: 'red',
   },
   {
@@ -83,7 +83,7 @@ const fallbackServices = [
       ja: '建築、構造、設備向けのフルディテールな建築情報モデルを作成します。',
     },
     icon: '🏗️',
-    link: '/services',
+    link: '/services?tab=2',
     accentColor: 'green',
   },
   {
@@ -101,7 +101,7 @@ const fallbackServices = [
       ja: 'プロジェクトの運用と管理にデジタルツインとスマート自動化システムを応用します。',
     },
     icon: '💻',
-    link: '/services',
+    link: '/services?tab=4',
     accentColor: 'red',
   },
 ]
@@ -137,10 +137,23 @@ export default function HomeContent({ data }) {
   const slides = d.heroSlides && d.heroSlides.length > 0 ? d.heroSlides : null
 
   /* ---------- Services ---------- */
-  const services =
+  const rawServices =
     d.featuredServices && d.featuredServices.length > 0
       ? d.featuredServices
       : fallbackServices
+
+  const services = rawServices.map((svc) => {
+    let newLink = svc.link || '/services'
+    if (newLink === '/services' || newLink === '/services/') {
+      const titleVi = (svc.title && svc.title.vi) ? svc.title.vi.toLowerCase() : ''
+      if (titleVi.includes('online')) newLink = '/services?tab=0'
+      else if (titleVi.includes('doanh nghiệp')) newLink = '/services?tab=1'
+      else if (titleVi.includes('mô hình bim')) newLink = '/services?tab=2'
+      else if (titleVi.includes('thiết kế bim')) newLink = '/services?tab=3'
+      else if (titleVi.includes('số hóa') || titleVi.includes('digital')) newLink = '/services?tab=4'
+    }
+    return { ...svc, link: newLink }
+  })
 
   /* ---------- Projects ---------- */
   const projects = d.featuredProjects || []
