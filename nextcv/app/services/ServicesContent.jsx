@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 import { useI18n } from '../../lib/i18n'
 import { urlFor } from '../../lib/sanity'
 
-export default function ServicesContent({ courses, trainings, bimProjects, designServices }) {
+export default function ServicesContent({ courses, trainings, bimProjects, designServices, initialTab = 0 }) {
   const { t, loc } = useI18n()
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(initialTab)
 
   const tabs = [
     { label: t('services.tab1', 'Đào tạo BIM Online') },
@@ -16,16 +16,10 @@ export default function ServicesContent({ courses, trainings, bimProjects, desig
     { label: t('services.tab5', 'Dịch vụ Số hóa Quản lý') },
   ]
 
+  // Update active tab if the server redirects or a user soft-navigates via Next router
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const tabParam = params.get('tab')
-    if (tabParam !== null) {
-      const idx = parseInt(tabParam, 10)
-      if (!isNaN(idx) && idx >= 0 && idx < tabs.length) {
-        setActiveTab(idx)
-      }
-    }
-  }, [tabs.length])
+    setActiveTab(initialTab)
+  }, [initialTab])
 
   const handleTabClick = (i) => {
     setActiveTab(i)

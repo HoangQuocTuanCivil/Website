@@ -14,7 +14,16 @@ export const metadata = {
   },
 }
 
-export default async function ServicesPage() {
+export default async function ServicesPage({ searchParams }) {
+  const sp = await searchParams;
+  let initialTab = 0;
+  if (sp && sp.tab) {
+    const parsed = parseInt(sp.tab, 10);
+    if (!isNaN(parsed) && parsed >= 0 && parsed <= 4) {
+      initialTab = parsed;
+    }
+  }
+
   const [courses, trainings, bimProjects, designServices] = await Promise.all([
     client.fetch(onlineCoursesQuery).catch(() => []),
     client.fetch(corpTrainingsQuery).catch(() => []),
@@ -24,6 +33,7 @@ export default async function ServicesPage() {
 
   return (
     <ServicesContent
+      initialTab={initialTab}
       courses={courses || []}
       trainings={trainings || []}
       bimProjects={bimProjects || []}
