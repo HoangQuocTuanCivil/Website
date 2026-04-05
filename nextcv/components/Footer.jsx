@@ -36,9 +36,9 @@ export default function Footer() {
         <div className="footer-col">
           <h4 className="footer-heading">{t('footer.services.title', 'Dịch vụ')}</h4>
           <ul className="footer-links">
-            <li><Link href="/services">{t('footer.svc1', 'Đào tạo BIM Online')}</Link></li>
-            <li><Link href="/services">{t('footer.svc2', 'Đào tạo BIM Doanh nghiệp')}</Link></li>
-            <li><Link href="/services">{t('footer.svc3', 'Mô hình BIM')}</Link></li>
+            <li><Link href="/services?tab=0">{t('footer.svc1', 'Đào tạo BIM Online')}</Link></li>
+            <li><Link href="/services?tab=1">{t('footer.svc2', 'Đào tạo BIM Doanh nghiệp')}</Link></li>
+            <li><Link href="/services?tab=2">{t('footer.svc3', 'Mô hình BIM')}</Link></li>
           </ul>
         </div>
 
